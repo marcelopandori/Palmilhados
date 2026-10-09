@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Palmilhados | Conforto em cada passo</title>
+    <meta name="description" content="Conheça as linhas de palmilhas Palmilhados: Comfort, Sport e Support.">
 
     <style>
         * {
@@ -14,175 +15,376 @@
             box-sizing: border-box;
         }
 
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f5f8fc;
-            color: #172334;
+        :root {
+            --azul-escuro: #0b1424;
+            --azul: #1687e8;
+            --ciano: #52d5e8;
+            --branco: #ffffff;
+            --cinza: #64748b;
+            --fundo: #f3f7fc;
         }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--fundo);
+            color: var(--azul-escuro);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .container {
+            width: min(1120px, 90%);
+            margin: auto;
+        }
+
+        /* CABEÇALHO */
 
         header {
-            background-color: #101b2b;
-            color: white;
-            padding: 25px 8%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 15px;
+            background: var(--azul-escuro);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 10;
         }
 
-        header h1 {
-            color: #52d5e8;
-            font-size: 28px;
+        .navegacao {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .logo {
+            color: var(--ciano);
+            font-size: 25px;
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
         }
 
         nav a {
             color: white;
-            text-decoration: none;
-            margin-left: 20px;
+            font-size: 14px;
             font-weight: bold;
+            transition: color .2s;
         }
 
         nav a:hover {
-            color: #52d5e8;
+            color: var(--ciano);
         }
+
+        /* DESTAQUE PRINCIPAL */
 
         .inicio {
-            text-align: center;
-            padding: 100px 20px;
-            background: linear-gradient(135deg, #e2f4ff, #ffffff);
+            background:
+                radial-gradient(ellipse at 85% 30%, #173d60 0%, transparent 40%),
+                linear-gradient(120deg, #0b1424, #10243c);
+            color: white;
+            padding: 100px 0;
+            overflow: hidden;
         }
 
-        .inicio h2 {
-            font-size: clamp(32px, 5vw, 48px);
-            color: #101b2b;
-            margin-bottom: 20px;
+        .inicio-conteudo {
+            display: grid;
+            grid-template-columns: 1.1fr .9fr;
+            align-items: center;
+            gap: 50px;
         }
 
-        .inicio h2 span {
-            color: #1687e8;
+        .etiqueta {
+            display: inline-block;
+            color: var(--ciano);
+            border: 1px solid #52d5e855;
+            background: #52d5e811;
+            border-radius: 30px;
+            padding: 7px 14px;
+            font-size: 12px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 22px;
+        }
+
+        .inicio h1 {
+            font-size: clamp(38px, 5vw, 62px);
+            line-height: 1.08;
+            letter-spacing: -2px;
+            margin-bottom: 22px;
+        }
+
+        .inicio h1 span {
+            color: var(--ciano);
         }
 
         .inicio p {
-            font-size: 18px;
-            color: #657386;
-            max-width: 600px;
-            margin: 0 auto 30px;
-            line-height: 1.7;
+            color: #c3d0df;
+            font-size: 17px;
+            max-width: 520px;
+            margin-bottom: 30px;
         }
 
         .botao {
             display: inline-block;
-            background-color: #1687e8;
-            color: white;
-            padding: 15px 25px;
+            padding: 14px 22px;
             border-radius: 8px;
-            text-decoration: none;
+            background: var(--azul);
+            color: white;
             font-weight: bold;
-            transition: 0.3s;
+            transition: .25s;
         }
 
         .botao:hover {
-            background-color: #101b2b;
-            transform: translateY(-2px);
+            background: #0872cc;
+            transform: translateY(-3px);
         }
 
-        .produtos {
-            padding: 70px 8%;
+        .botao-secundario {
+            display: inline-block;
+            color: white;
+            font-weight: bold;
+            margin-left: 18px;
+        }
+
+        .produto-destaque {
+            min-height: 320px;
+            border: 1px solid #ffffff20;
+            border-radius: 25px;
+            background: linear-gradient(145deg, #ffffff12, #ffffff04);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 30px;
             text-align: center;
         }
 
-        .produtos h2 {
-            font-size: 34px;
-            margin-bottom: 12px;
+        .produto-destaque .simbolo {
+            font-size: 115px;
+            filter: drop-shadow(0 15px 20px #0005);
         }
 
-        .descricao {
-            color: #657386;
-            margin-bottom: 40px;
+        .produto-destaque strong {
+            font-size: 20px;
+            margin-top: 10px;
+        }
+
+        .produto-destaque span {
+            color: #b9cadc;
+            font-size: 13px;
+        }
+
+        /* BENEFÍCIOS */
+
+        .beneficios {
+            background: white;
+            border-bottom: 1px solid #e3eaf2;
+        }
+
+        .beneficios-lista {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 25px 0;
+        }
+
+        .beneficio {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .beneficio span {
+            font-size: 25px;
+        }
+
+        /* CATÁLOGO */
+
+        section.catalogo {
+            padding: 85px 0;
+        }
+
+        .titulo-secao {
+            text-align: center;
+            margin-bottom: 42px;
+        }
+
+        .titulo-secao small {
+            color: var(--azul);
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .titulo-secao h2 {
+            font-size: clamp(29px, 4vw, 40px);
+            margin: 8px 0;
+            letter-spacing: -1px;
+        }
+
+        .titulo-secao p {
+            color: var(--cinza);
         }
 
         .lista-produtos {
             display: grid;
             grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 25px;
-            text-align: left;
+            gap: 24px;
         }
 
         .produto {
-            background-color: white;
-            padding: 28px;
-            border-radius: 15px;
+            background: white;
             border: 1px solid #e2eaf2;
-            box-shadow: 0 5px 20px #101b2b08;
-            transition: 0.3s;
+            border-radius: 17px;
+            overflow: hidden;
+            transition: transform .25s, box-shadow .25s;
         }
 
         .produto:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 28px #101b2b12;
+            transform: translateY(-7px);
+            box-shadow: 0 18px 35px #10243c12;
         }
 
-        .icone {
-            font-size: 42px;
-            margin-bottom: 15px;
+        .produto-imagem {
+            height: 210px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #e3f4ff, #f7fbff);
+            font-size: 76px;
+        }
+
+        .produto-info {
+            padding: 25px;
+        }
+
+        .categoria {
+            color: var(--azul);
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
         }
 
         .produto h3 {
-            color: #1687e8;
-            font-size: 23px;
-            margin-bottom: 12px;
+            font-size: 22px;
+            margin: 8px 0;
         }
 
         .produto p {
-            color: #657386;
-            line-height: 1.7;
+            color: var(--cinza);
+            font-size: 14px;
+            margin-bottom: 20px;
         }
 
+        .link-produto {
+            color: var(--azul);
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        /* SOBRE */
+
         .sobre {
-            background-color: #101b2b;
+            background: var(--azul-escuro);
             color: white;
+            padding: 75px 0;
             text-align: center;
-            padding: 70px 20px;
+        }
+
+        .sobre .container {
+            max-width: 800px;
         }
 
         .sobre h2 {
             font-size: 34px;
-            margin-bottom: 20px;
+            margin-bottom: 18px;
         }
 
         .sobre p {
-            max-width: 700px;
-            margin: auto;
-            line-height: 1.8;
-            color: #d1dce8;
+            color: #c3d0df;
+            line-height: 1.9;
         }
+
+        .sobre .botao {
+            margin-top: 25px;
+        }
+
+        /* RODAPÉ */
 
         footer {
+            background: #070d17;
+            color: #aab9ca;
+            padding: 25px 0;
             text-align: center;
-            padding: 25px;
-            background-color: #080f19;
-            color: #b9c8d8;
+            font-size: 13px;
         }
 
+        /* CELULARES E TABLETS */
+
         @media (max-width: 800px) {
-            header {
-                justify-content: center;
-                text-align: center;
+            .inicio {
+                padding: 65px 0;
             }
 
-            nav a {
-                margin: 0 8px;
-                display: inline-block;
-                padding: 8px 0;
+            .inicio-conteudo {
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
+
+            .produto-destaque {
+                min-height: 240px;
+            }
+
+            .produto-destaque .simbolo {
+                font-size: 85px;
             }
 
             .lista-produtos {
                 grid-template-columns: 1fr;
             }
 
-            .inicio {
-                padding: 70px 20px;
+            .beneficios-lista {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 520px) {
+            .navegacao {
+                flex-direction: column;
+            }
+
+            nav {
+                justify-content: center;
+                gap: 16px;
+            }
+
+            .inicio h1 {
+                letter-spacing: -1px;
+            }
+
+            .botao-secundario {
+                display: block;
+                margin: 18px 0 0;
+            }
+
+            section.catalogo {
+                padding: 60px 0;
             }
         }
     </style>
@@ -191,99 +393,176 @@
 <body>
 
     <header>
-        <h1>PALMILHADOS 👣</h1>
+        <div class="container navegacao">
+            <a href="#inicio" class="logo">PALMILHADOS 👣</a>
 
-        <nav>
-            <a href="#inicio">Início</a>
-            <a href="#produtos">Produtos</a>
-            <a href="#sobre">Sobre nós</a>
-        </nav>
+            <nav aria-label="Menu principal">
+                <a href="#inicio">Início</a>
+                <a href="#produtos">Produtos</a>
+                <a href="#sobre">Sobre nós</a>
+            </nav>
+        </div>
     </header>
 
     <main>
-
         <section class="inicio" id="inicio">
-            <h2>Conforto que acompanha <span>seus passos.</span></h2>
+            <div class="container inicio-conteudo">
 
-            <p>
-                Conheça a Palmilhados! Nossa proposta é oferecer
-                palmilhas práticas e acessíveis para acompanhar
-                você em cada passo da sua rotina.
-            </p>
+                <div>
+                    <span class="etiqueta">Conforto em movimento</span>
 
-            <a href="#produtos" class="botao">
-                Conheça nossos produtos
-            </a>
-        </section>
-
-        <section class="produtos" id="produtos">
-            <h2>Nossas linhas</h2>
-
-            <p class="descricao">
-                Conheça as propostas de produtos da Palmilhados.
-            </p>
-
-            <div class="lista-produtos">
-
-                <article class="produto">
-                    <div class="icone">👟</div>
-
-                    <h3>Palmilhados Comfort</h3>
+                    <h1>
+                        Cada passo conta.<br>
+                        <span>Vá mais longe.</span>
+                    </h1>
 
                     <p>
-                        Uma opção para o uso cotidiano,
-                        pensada para estudantes, trabalhadores
-                        e pessoas que passam muito tempo em pé.
+                        Descubra as linhas Palmilhados, desenvolvidas
+                        como propostas para acompanhar diferentes
+                        momentos da sua rotina.
                     </p>
-                </article>
 
-                <article class="produto">
-                    <div class="icone">🏃</div>
+                    <a href="#produtos" class="botao">
+                        Explorar produtos →
+                    </a>
 
-                    <h3>Palmilhados Sport</h3>
+                    <a href="#sobre" class="botao-secundario">
+                        Conheça a marca
+                    </a>
+                </div>
 
-                    <p>
-                        Uma proposta para quem pratica corrida,
-                        futebol, musculação e outras atividades
-                        físicas, considerando o ajuste ao calçado.
-                    </p>
-                </article>
-
-                <article class="produto">
-                    <div class="icone">🦶</div>
-
-                    <h3>Palmilhados Support</h3>
-
-                    <p>
-                        Uma linha em estudo com diferentes
-                        formatos de suporte para o arco do pé,
-                        considerando necessidades específicas.
-                    </p>
-                </article>
+                <div class="produto-destaque">
+                    <div class="simbolo">👟</div>
+                    <strong>Palmilhados Sport</strong>
+                    <span>Movimento, conforto e praticidade</span>
+                </div>
 
             </div>
         </section>
 
-        <section class="sobre" id="sobre">
-            <h2>Sobre a Palmilhados</h2>
+        <section class="beneficios">
+            <div class="container beneficios-lista">
 
-            <p>
-                Somos uma marca criada com o objetivo de oferecer
-                palmilhas práticas e acessíveis, com foco no conforto
-                e no bem-estar durante a rotina. Valorizamos qualidade,
-                respeito, inovação, transparência e responsabilidade.
-                Queremos crescer junto com nossos clientes,
-                oferecendo produtos que acompanhem seus passos.
-            </p>
+                <div class="beneficio">
+                    <span>👟</span>
+                    Para diferentes rotinas
+                </div>
+
+                <div class="beneficio">
+                    <span>🏃</span>
+                    Proposta esportiva
+                </div>
+
+                <div class="beneficio">
+                    <span>💙</span>
+                    Foco no conforto
+                </div>
+
+            </div>
         </section>
 
+        <section class="catalogo" id="produtos">
+            <div class="container">
+
+                <div class="titulo-secao">
+                    <small>Nosso catálogo</small>
+                    <h2>Encontre sua linha</h2>
+                    <p>Conheça as propostas da família Palmilhados.</p>
+                </div>
+
+                <div class="lista-produtos">
+
+                    <article class="produto">
+                        <div class="produto-imagem">👞</div>
+
+                        <div class="produto-info">
+                            <span class="categoria">Dia a dia</span>
+                            <h3>Palmilhados Comfort</h3>
+
+                            <p>
+                                Uma proposta para acompanhar estudantes,
+                                trabalhadores e diferentes momentos
+                                da rotina.
+                            </p>
+
+                            <a class="link-produto" href="#sobre">
+                                Conheça a proposta →
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="produto">
+                        <div class="produto-imagem">🏃</div>
+
+                        <div class="produto-info">
+                            <span class="categoria">Esportes</span>
+                            <h3>Palmilhados Sport</h3>
+
+                            <p>
+                                Uma linha pensada para atividades físicas,
+                                considerando o ajuste ao calçado e
+                                os materiais utilizados.
+                            </p>
+
+                            <a class="link-produto" href="#sobre">
+                                Conheça a proposta →
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="produto">
+                        <div class="produto-imagem">🦶</div>
+
+                        <div class="produto-info">
+                            <span class="categoria">Suporte</span>
+                            <h3>Palmilhados Support</h3>
+
+                            <p>
+                                Uma proposta em desenvolvimento com
+                                diferentes formatos de suporte
+                                para o arco do pé.
+                            </p>
+
+                            <a class="link-produto" href="#sobre">
+                                Conheça a proposta →
+                            </a>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="sobre" id="sobre">
+            <div class="container">
+
+                <span class="etiqueta">Nossa identidade</span>
+
+                <h2>Sobre a Palmilhados</h2>
+
+                <p>
+                    A Palmilhados nasce com a proposta de aproximar
+                    conforto, praticidade e movimento. Queremos
+                    desenvolver opções para diferentes rotinas,
+                    valorizando qualidade, transparência, inovação
+                    e responsabilidade em cada etapa.
+                </p>
+
+                <a href="#produtos" class="botao">
+                    Ver nossas linhas →
+                </a>
+
+            </div>
+        </section>
     </main>
 
     <footer>
-        <p>
-            &copy; 2026 Palmilhados.
-            Conforto que acompanha seus passos.
-        </p>
+        <div class="container">
+            <p>
+                &copy; 2026 Palmilhados.
+                Conforto que acompanha seus passos.
+            </p>
+        </div>
     </footer>
 
 </body>
