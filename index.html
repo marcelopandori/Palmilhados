@@ -1,0 +1,290 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Palmilhados | Conforto em cada passo</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f8fc;
+            color: #172334;
+        }
+
+        header {
+            background-color: #101b2b;
+            color: white;
+            padding: 25px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        header h1 {
+            color: #52d5e8;
+            font-size: 28px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #52d5e8;
+        }
+
+        .inicio {
+            text-align: center;
+            padding: 100px 20px;
+            background: linear-gradient(135deg, #e2f4ff, #ffffff);
+        }
+
+        .inicio h2 {
+            font-size: clamp(32px, 5vw, 48px);
+            color: #101b2b;
+            margin-bottom: 20px;
+        }
+
+        .inicio h2 span {
+            color: #1687e8;
+        }
+
+        .inicio p {
+            font-size: 18px;
+            color: #657386;
+            max-width: 600px;
+            margin: 0 auto 30px;
+            line-height: 1.7;
+        }
+
+        .botao {
+            display: inline-block;
+            background-color: #1687e8;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .botao:hover {
+            background-color: #101b2b;
+            transform: translateY(-2px);
+        }
+
+        .produtos {
+            padding: 70px 8%;
+            text-align: center;
+        }
+
+        .produtos h2 {
+            font-size: 34px;
+            margin-bottom: 12px;
+        }
+
+        .descricao {
+            color: #657386;
+            margin-bottom: 40px;
+        }
+
+        .lista-produtos {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 25px;
+            text-align: left;
+        }
+
+        .produto {
+            background-color: white;
+            padding: 28px;
+            border-radius: 15px;
+            border: 1px solid #e2eaf2;
+            box-shadow: 0 5px 20px #101b2b08;
+            transition: 0.3s;
+        }
+
+        .produto:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 28px #101b2b12;
+        }
+
+        .icone {
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+        .produto h3 {
+            color: #1687e8;
+            font-size: 23px;
+            margin-bottom: 12px;
+        }
+
+        .produto p {
+            color: #657386;
+            line-height: 1.7;
+        }
+
+        .sobre {
+            background-color: #101b2b;
+            color: white;
+            text-align: center;
+            padding: 70px 20px;
+        }
+
+        .sobre h2 {
+            font-size: 34px;
+            margin-bottom: 20px;
+        }
+
+        .sobre p {
+            max-width: 700px;
+            margin: auto;
+            line-height: 1.8;
+            color: #d1dce8;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            background-color: #080f19;
+            color: #b9c8d8;
+        }
+
+        @media (max-width: 800px) {
+            header {
+                justify-content: center;
+                text-align: center;
+            }
+
+            nav a {
+                margin: 0 8px;
+                display: inline-block;
+                padding: 8px 0;
+            }
+
+            .lista-produtos {
+                grid-template-columns: 1fr;
+            }
+
+            .inicio {
+                padding: 70px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>PALMILHADOS 👣</h1>
+
+        <nav>
+            <a href="#inicio">Início</a>
+            <a href="#produtos">Produtos</a>
+            <a href="#sobre">Sobre nós</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="inicio" id="inicio">
+            <h2>Conforto que acompanha <span>seus passos.</span></h2>
+
+            <p>
+                Conheça a Palmilhados! Nossa proposta é oferecer
+                palmilhas práticas e acessíveis para acompanhar
+                você em cada passo da sua rotina.
+            </p>
+
+            <a href="#produtos" class="botao">
+                Conheça nossos produtos
+            </a>
+        </section>
+
+        <section class="produtos" id="produtos">
+            <h2>Nossas linhas</h2>
+
+            <p class="descricao">
+                Conheça as propostas de produtos da Palmilhados.
+            </p>
+
+            <div class="lista-produtos">
+
+                <article class="produto">
+                    <div class="icone">👟</div>
+
+                    <h3>Palmilhados Comfort</h3>
+
+                    <p>
+                        Uma opção para o uso cotidiano,
+                        pensada para estudantes, trabalhadores
+                        e pessoas que passam muito tempo em pé.
+                    </p>
+                </article>
+
+                <article class="produto">
+                    <div class="icone">🏃</div>
+
+                    <h3>Palmilhados Sport</h3>
+
+                    <p>
+                        Uma proposta para quem pratica corrida,
+                        futebol, musculação e outras atividades
+                        físicas, considerando o ajuste ao calçado.
+                    </p>
+                </article>
+
+                <article class="produto">
+                    <div class="icone">🦶</div>
+
+                    <h3>Palmilhados Support</h3>
+
+                    <p>
+                        Uma linha em estudo com diferentes
+                        formatos de suporte para o arco do pé,
+                        considerando necessidades específicas.
+                    </p>
+                </article>
+
+            </div>
+        </section>
+
+        <section class="sobre" id="sobre">
+            <h2>Sobre a Palmilhados</h2>
+
+            <p>
+                Somos uma marca criada com o objetivo de oferecer
+                palmilhas práticas e acessíveis, com foco no conforto
+                e no bem-estar durante a rotina. Valorizamos qualidade,
+                respeito, inovação, transparência e responsabilidade.
+                Queremos crescer junto com nossos clientes,
+                oferecendo produtos que acompanhem seus passos.
+            </p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>
+            &copy; 2026 Palmilhados.
+            Conforto que acompanha seus passos.
+        </p>
+    </footer>
+
+</body>
+</html>
