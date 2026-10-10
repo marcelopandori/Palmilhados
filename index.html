@@ -4,682 +4,713 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#08172a">
-  <meta name="description" content="Palmilhados: palmilhas para o dia a dia, esporte e suporte. Conheça nossos produtos e faça seu pedido.">
+  <meta name="theme-color" content="#10284c">
+  <meta name="description" content="Palmilhados: conforto e suporte para seus passos. Conheça nossa linha de palmilhas.">
   <title>Palmilhados | Conforto em cada passo</title>
 
   <style>
     :root {
-      --navy: #08172a;
-      --blue: #102c50;
-      --medium: #1d4b7e;
-      --accent: #55aaff;
-      --pale: #eaf3ff;
-      --bg: #f5f8fc;
-      --text: #17263b;
-      --muted: #64748b;
-      --border: #dce5f0;
+      --navy: #10284c;
+      --blue: #204d82;
+      --green: #07865b;
+      --light: #f3f6fa;
       --white: #fff;
-      --green: #16794b;
+      --text: #26364b;
+      --muted: #65748a;
+      --border: #dce4ed;
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * { box-sizing: border-box; }
 
-    html { scroll-behavior: smooth; scroll-padding-top: 85px; }
+    html { scroll-behavior: smooth; }
 
     body {
+      margin: 0;
       font-family: Arial, Helvetica, sans-serif;
-      line-height: 1.6;
-      background: var(--white);
       color: var(--text);
+      background: var(--light);
+      line-height: 1.6;
     }
 
-    a { text-decoration: none; color: inherit; }
     button, input, select, textarea { font: inherit; }
-    button { cursor: pointer; }
-    .container { width: min(1120px, 92%); margin: auto; }
-    .section { padding: 76px 0; }
-    .light { background: var(--bg); }
 
-    .section-heading { text-align: center; margin-bottom: 38px; }
-    .section-heading small {
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      font-weight: 800;
-      color: var(--medium);
-    }
-    .section-heading h2 {
-      color: var(--blue);
-      font-size: clamp(1.9rem, 4vw, 2.7rem);
-      line-height: 1.2;
-      margin: 10px 0;
-    }
-    .section-heading p {
-      color: var(--muted);
-      max-width: 680px;
+    a { color: inherit; }
+
+    .container {
+      width: min(1100px, 92%);
       margin: auto;
     }
 
-    .btn {
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      gap: 8px;
-      border: 0;
-      border-radius: 9px;
-      padding: 13px 20px;
-      font-weight: 800;
-      transition: .2s;
-      text-align: center;
-    }
-    .btn:hover { transform: translateY(-2px); }
-    .btn-primary { background: var(--accent); color: var(--navy); }
-    .btn-blue { background: var(--blue); color: white; }
-    .btn-outline { color: white; border: 1px solid #ffffff70; background: transparent; }
-    .btn:disabled { opacity: .6; cursor: wait; transform: none; }
-
-    /* Cabeçalho */
     header {
+      background: var(--navy);
+      color: white;
       position: sticky;
       top: 0;
-      z-index: 20;
-      color: white;
-      background: var(--navy);
-      box-shadow: 0 4px 20px #0002;
+      z-index: 10;
     }
-    .nav {
+
+    .navbar {
       min-height: 74px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 20px;
     }
-    .logo { font-size: 1.45rem; font-weight: 900; white-space: nowrap; }
-    .logo span { color: var(--accent); }
-    .nav-links { display: flex; align-items: center; gap: 20px; }
-    .nav-links a { font-size: .9rem; font-weight: 700; color: #e1eaf6; }
-    .nav-links a:hover { color: var(--accent); }
-    .menu-btn {
-      display: none;
-      border: 1px solid #ffffff60;
-      border-radius: 8px;
-      padding: 6px 12px;
+
+    .logo {
       color: white;
-      background: transparent;
+      text-decoration: none;
+      font-size: 1.45rem;
+      font-weight: 800;
     }
 
-    /* Capa */
-    .hero {
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+
+    nav a {
       color: white;
-      background:
-        radial-gradient(circle at 80% 20%, #55aaff30, transparent 33%),
-        linear-gradient(125deg, var(--navy), var(--blue) 70%, var(--medium));
+      text-decoration: none;
+      font-size: .92rem;
     }
-    .hero-grid {
+
+    nav a:hover { color: #8ee6c2; }
+
+    .hero {
+      background: linear-gradient(135deg, #10284c, #245a8b);
+      color: white;
+      padding: 80px 0;
+    }
+
+    .hero-content {
       display: grid;
-      grid-template-columns: 1.15fr .85fr;
-      gap: 35px;
+      grid-template-columns: 1.3fr 1fr;
       align-items: center;
-      min-height: 500px;
-      padding-top: 45px;
-      padding-bottom: 45px;
+      gap: 36px;
     }
+
     .eyebrow {
-      display: inline-block;
-      padding: 7px 13px;
-      margin-bottom: 20px;
-      border-radius: 30px;
-      border: 1px solid #55aaff60;
-      background: #55aaff18;
-      color: var(--accent);
+      color: #a5f0cf;
+      text-transform: uppercase;
+      letter-spacing: 2px;
       font-size: .8rem;
-      font-weight: 800;
-      letter-spacing: 1px;
+      font-weight: bold;
     }
-    .hero h1 {
-      font-size: clamp(2.7rem, 5vw, 4.5rem);
-      line-height: 1.06;
-      letter-spacing: -1.5px;
-      margin-bottom: 20px;
+
+    h1 {
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      line-height: 1.1;
+      margin: 14px 0;
     }
-    .hero h1 span { color: var(--accent); }
-    .hero p { max-width: 560px; color: #d7e3f2; margin-bottom: 27px; }
-    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
-    .hero-art { display: grid; place-items: center; min-height: 320px; position: relative; }
-    .hero-circle {
-      width: min(340px, 80vw);
-      aspect-ratio: 1;
-      border-radius: 50%;
-      border: 1px solid #ffffff25;
-      background: radial-gradient(circle, #55aaff35, #ffffff05 70%);
+
+    .hero p {
+      color: #e2eaf4;
+      max-width: 540px;
+    }
+
+    .hero-visual {
+      min-height: 250px;
       display: grid;
       place-items: center;
-    }
-    .hero-shoe { font-size: clamp(8rem, 16vw, 12rem); transform: rotate(-22deg); }
-    .float-label {
-      position: absolute;
-      padding: 10px 13px;
       border: 1px solid #ffffff35;
-      border-radius: 10px;
-      background: #ffffff18;
-      font-weight: 700;
-      font-size: .85rem;
+      background: #ffffff0b;
+      border-radius: 24px;
+      padding: 25px;
+      text-align: center;
     }
-    .float-one { top: 15%; right: 0; }
-    .float-two { bottom: 12%; left: 0; }
 
-    /* Benefícios */
-    .benefits { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; padding-top: 26px; padding-bottom: 26px; }
-    .benefit { display: flex; align-items: center; justify-content: center; gap: 12px; }
-    .benefit-icon { font-size: 1.9rem; }
-    .benefit strong { display: block; color: var(--blue); }
-    .benefit small { color: var(--muted); }
+    .shoe-icon { font-size: 7rem; }
 
-    /* Catálogo */
-    .products { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
-    .product {
-      display: flex;
-      flex-direction: column;
-      overflow: hidden;
+    .button {
+      display: inline-block;
+      border: 0;
+      border-radius: 10px;
+      padding: 13px 20px;
+      background: var(--green);
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+      text-align: center;
+      cursor: pointer;
+    }
+
+    .button:hover { filter: brightness(.94); }
+
+    .button.secondary { background: var(--navy); }
+
+    .button.light {
+      background: white;
+      color: var(--navy);
+    }
+
+    section { padding: 60px 0; }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .section-heading h2 {
+      color: var(--navy);
+      margin-bottom: 8px;
+      font-size: clamp(1.8rem, 4vw, 2.4rem);
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .card {
+      background: white;
       border: 1px solid var(--border);
       border-radius: 17px;
-      background: white;
-      transition: .2s;
+      overflow: hidden;
+      box-shadow: 0 5px 20px #10284c08;
     }
-    .product:hover { transform: translateY(-4px); box-shadow: 0 12px 30px #08172a12; }
-    .product-art {
-      min-height: 190px;
+
+    .product-image {
+      min-height: 175px;
       display: grid;
       place-items: center;
-      position: relative;
-      background: linear-gradient(145deg, #e7f1ff, #f7faff);
+      background: #e9eff6;
+      font-size: 5rem;
     }
-    .product-art .emoji { font-size: 5.3rem; filter: drop-shadow(0 8px 8px #102c5020); }
-    .tag {
-      position: absolute;
-      top: 13px;
-      left: 13px;
-      padding: 5px 10px;
-      border-radius: 25px;
-      color: white;
-      background: var(--blue);
-      font-size: .72rem;
-      font-weight: 800;
-    }
-    .product-content { display: flex; flex: 1; flex-direction: column; padding: 22px; }
-    .product h3 { color: var(--blue); font-size: 1.25rem; }
-    .product p { margin: 8px 0 12px; color: var(--muted); font-size: .93rem; }
-    .product ul { list-style: none; margin-bottom: 15px; }
-    .product li { padding: 4px 0; font-size: .88rem; }
-    .product li::before { content: "✓ "; color: var(--green); font-weight: 900; }
-    .price { margin: 6px 0 17px; color: var(--blue); font-size: 1.8rem; font-weight: 900; }
-    .price small { color: var(--muted); font-size: .82rem; font-weight: 500; }
-    .product .btn { width: 100%; margin-top: auto; }
 
-    .combo {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      align-items: center;
-      gap: 22px;
-      margin-top: 30px;
-      padding: 30px;
-      border-radius: 18px;
-      color: white;
-      background: linear-gradient(120deg, var(--navy), var(--medium));
+    .product-image img {
+      width: 100%;
+      height: 200px;
+      object-fit: contain;
     }
-    .combo-label {
-      display: inline-block;
-      padding: 5px 10px;
-      margin-bottom: 8px;
-      border-radius: 20px;
+
+    .card-body { padding: 22px; }
+
+    .card h3 {
       color: var(--navy);
-      background: var(--accent);
-      font-weight: 900;
-      font-size: .75rem;
+      margin: 0 0 8px;
     }
-    .combo h3 { font-size: 1.6rem; }
-    .combo p { color: #d9e5f4; }
-    .combo-price { color: var(--accent); font-size: 2.2rem; font-weight: 900; white-space: nowrap; }
-    .combo-price small { display: block; color: #d9e5f4; font-size: .8rem; font-weight: 500; }
-    .fine-print { text-align: center; margin-top: 20px; color: var(--muted); font-size: .85rem; }
 
-    /* Materiais */
-    .materials { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-    .material { padding: 25px; border: 1px solid var(--border); border-radius: 15px; background: white; }
-    .material-icon {
-      width: 50px; height: 50px; display: grid; place-items: center;
-      border-radius: 12px; margin-bottom: 15px; background: var(--pale); font-size: 1.6rem;
+    .card p { color: var(--muted); }
+
+    .price {
+      color: var(--green);
+      font-size: 1.6rem;
+      font-weight: 800;
+      margin: 15px 0;
     }
-    .material h3 { color: var(--blue); margin-bottom: 8px; }
-    .material p { color: var(--muted); font-size: .93rem; }
-    .notice {
-      margin-top: 22px;
+
+    .feature {
+      padding: 22px;
+      border-radius: 15px;
+      background: white;
+      border: 1px solid var(--border);
+    }
+
+    .feature span { font-size: 2rem; }
+
+    .feature h3 { color: var(--navy); }
+
+    .two-columns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      align-items: start;
+    }
+
+    .panel {
+      background: white;
+      padding: 25px;
+      border: 1px solid var(--border);
+      border-radius: 17px;
+      box-shadow: 0 5px 20px #10284c08;
+    }
+
+    .panel h2, .panel h3 { color: var(--navy); }
+
+    label {
+      display: block;
+      margin: 13px 0 6px;
+      font-weight: 700;
+      font-size: .93rem;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #cbd5e1;
+      border-radius: 9px;
+      background: white;
+      color: var(--text);
+    }
+
+    input:focus, select:focus, textarea:focus {
+      outline: 2px solid #78b5eb;
+      outline-offset: 1px;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0 14px;
+    }
+
+    .full { grid-column: 1 / -1; }
+
+    .check-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin: 17px 0;
+    }
+
+    .check-row input {
+      width: auto;
+      margin-top: 6px;
+    }
+
+    .check-row label {
+      margin: 0;
+      font-weight: normal;
+    }
+
+    .total-box {
+      margin: 18px 0;
       padding: 15px;
-      border: 1px solid #f0dfb5;
-      border-radius: 10px;
-      color: #6c4e17;
-      background: #fff8e7;
+      background: #edf7f2;
+      border-radius: 12px;
+    }
+
+    .total-box strong {
+      color: var(--green);
+      font-size: 1.65rem;
+    }
+
+    .note {
+      color: var(--muted);
       font-size: .88rem;
     }
 
-    /* Escolha */
-    .choose-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 45px; align-items: center; }
-    .choose-art {
-      min-height: 320px;
+    .pix-area {
+      display: none;
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+    }
+
+    .pix-area.visible { display: block; }
+
+    .qr-box {
       display: grid;
       place-items: center;
-      padding: 30px;
-      border-radius: 20px;
-      color: white;
-      text-align: center;
-      background: linear-gradient(135deg, var(--blue), var(--medium));
+      margin: 20px auto;
+      padding: 15px;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      width: fit-content;
+      max-width: 100%;
+      min-height: 50px;
     }
-    .choose-art .emoji { font-size: 6rem; }
-    .choose-art h3 { font-size: 1.6rem; }
-    .choose-copy h2 { color: var(--blue); font-size: clamp(1.9rem, 4vw, 2.5rem); line-height: 1.2; margin-bottom: 15px; }
-    .choose-copy > p { color: var(--muted); margin-bottom: 20px; }
-    .step { display: flex; gap: 13px; margin: 17px 0; }
-    .step-num {
-      flex-shrink: 0; width: 37px; height: 37px; display: grid; place-items: center;
-      border-radius: 50%; color: white; background: var(--blue); font-weight: 900;
-    }
-    .step strong { color: var(--blue); }
-    .step p { color: var(--muted); font-size: .92rem; }
 
-    /* Sobre */
-    .about {
-      display: grid;
-      grid-template-columns: 1fr .8fr;
-      align-items: center;
-      gap: 35px;
-      padding: clamp(25px, 5vw, 50px);
-      border-radius: 20px;
-      color: white;
+    #qrcode img, #qrcode canvas {
+      max-width: 100%;
+      height: auto !important;
+    }
+
+    .pix-code {
+      min-height: 100px;
+      resize: vertical;
+      font-size: .8rem;
+      overflow-wrap: anywhere;
+    }
+
+    .status {
+      margin-top: 15px;
+      padding: 12px;
+      border-radius: 9px;
+      background: #eef3f8;
+      overflow-wrap: anywhere;
+    }
+
+    .faq details {
+      padding: 17px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .faq summary {
+      cursor: pointer;
+      font-weight: bold;
+      color: var(--navy);
+    }
+
+    .faq details p { color: var(--muted); }
+
+    .support-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    footer {
       background: var(--navy);
-    }
-    .about h2 { margin: 12px 0 17px; font-size: clamp(1.9rem, 4vw, 2.6rem); line-height: 1.2; }
-    .about p { color: #d1deee; margin-bottom: 12px; }
-    .about-points { display: grid; gap: 12px; }
-    .about-point { padding: 15px; border: 1px solid #ffffff20; border-radius: 12px; background: #ffffff0c; }
-    .about-point strong { display: block; color: var(--accent); }
-    .about-point span { color: #d1deee; font-size: .9rem; }
-
-    /* FAQ */
-    .faq { max-width: 850px; margin: auto; }
-    .faq details { margin-bottom: 12px; padding: 17px 19px; border: 1px solid var(--border); border-radius: 11px; background: white; }
-    .faq summary { cursor: pointer; color: var(--blue); font-weight: 800; }
-    .faq details p { padding-top: 10px; color: var(--muted); }
-
-    /* Pedido */
-    .order-layout { display: grid; grid-template-columns: 1.2fr .8fr; align-items: start; gap: 25px; }
-    .order-card { padding: clamp(20px, 4vw, 32px); border: 1px solid var(--border); border-radius: 16px; background: white; box-shadow: 0 10px 30px #08172a0a; }
-    .order-card h3 { margin-bottom: 5px; color: var(--blue); font-size: 1.35rem; }
-    .order-intro { margin-bottom: 22px; color: var(--muted); font-size: .92rem; }
-    .field { margin-bottom: 16px; }
-    .field label { display: block; margin-bottom: 6px; color: var(--blue); font-size: .9rem; font-weight: 800; }
-    .field input, .field select, .field textarea {
-      width: 100%; min-width: 0; padding: 12px; border: 1px solid #cbd7e5;
-      border-radius: 8px; color: var(--text); background: white;
-    }
-    .field textarea { min-height: 90px; resize: vertical; }
-    .two-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 13px; }
-    .consent { display: flex; align-items: flex-start; gap: 9px; margin: 20px 0; color: var(--muted); font-size: .84rem; }
-    .consent input { margin-top: 5px; }
-    .submit-btn { width: 100%; }
-    .order-notice { margin-top: 15px; padding: 13px; border-radius: 9px; color: var(--blue); background: var(--pale); font-size: .85rem; }
-    .summary { position: sticky; top: 95px; padding: 25px; border-radius: 16px; color: white; background: var(--navy); }
-    .summary h3 { margin-bottom: 5px; font-size: 1.4rem; }
-    .summary > p { margin-bottom: 15px; color: #cbd8e8; font-size: .9rem; }
-    .summary-row { display: flex; justify-content: space-between; gap: 12px; padding: 11px 0; border-bottom: 1px solid #ffffff20; font-size: .91rem; }
-    .summary-row span:first-child { color: #cbd8e8; }
-    .summary-row span:last-child { text-align: right; overflow-wrap: anywhere; }
-    .summary-total { color: var(--accent); font-size: 1.15rem; font-weight: 900; }
-    .summary-note { margin-top: 17px; color: #cbd8e8; font-size: .82rem; }
-    .status { display: none; margin-top: 15px; padding: 14px; border-radius: 9px; font-size: .9rem; overflow-wrap: anywhere; }
-    .status.visible { display: block; }
-    .status.success { background: #e5f7ed; color: #145d3b; }
-    .status.error { background: #fff0f0; color: #9b2222; }
-
-    /* Rodapé */
-    footer { padding: 42px 0 20px; color: white; background: #050e1b; }
-    .footer-grid { display: grid; grid-template-columns: 1.2fr .8fr 1fr; gap: 30px; margin-bottom: 30px; }
-    footer h3 { margin-bottom: 12px; font-size: 1rem; }
-    footer p, footer a { color: #c2cede; font-size: .9rem; }
-    .footer-links { display: grid; gap: 7px; }
-    footer a:hover { color: var(--accent); }
-    .footer-bottom { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; padding-top: 18px; border-top: 1px solid #ffffff20; color: #aebcd0; font-size: .82rem; }
-
-    @media (max-width: 900px) {
-      .nav-links { gap: 11px; }
-      .nav-links a { font-size: .8rem; }
-      .order-layout { grid-template-columns: 1fr; }
-      .summary { position: static; }
+      color: white;
+      padding: 35px 0;
+      text-align: center;
     }
 
-    @media (max-width: 700px) {
-      .section { padding: 55px 0; }
-      .nav { min-height: 68px; flex-wrap: wrap; }
-      .menu-btn { display: block; }
-      .nav-links { display: none; width: 100%; flex-direction: column; align-items: stretch; padding-bottom: 15px; }
-      .nav-links.open { display: flex; }
-      .nav-links a { padding: 10px 0; border-top: 1px solid #ffffff20; font-size: .95rem; }
-      .hero-grid { grid-template-columns: 1fr; text-align: center; padding-top: 55px; }
-      .hero-actions { justify-content: center; }
-      .hero-art { min-height: 260px; }
-      .hero-circle { width: 250px; }
-      .hero-shoe { font-size: 8rem; }
-      .benefits, .products, .materials { grid-template-columns: 1fr; }
-      .benefit { justify-content: flex-start; }
-      .combo { grid-template-columns: 1fr; }
-      .choose-grid, .about { grid-template-columns: 1fr; gap: 25px; }
-      .choose-art { min-height: 240px; }
-      .two-cols { grid-template-columns: 1fr; gap: 0; }
-      .footer-grid { grid-template-columns: 1fr; gap: 23px; }
+    footer p { color: #d4dfed; }
+
+    .whatsapp-float {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      z-index: 20;
+      background: #128c52;
+      color: white;
+      text-decoration: none;
+      padding: 13px 18px;
+      border-radius: 50px;
+      box-shadow: 0 4px 15px #0002;
+      font-weight: bold;
     }
 
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      *, *::before, *::after { transition: none !important; }
+    @media (max-width: 760px) {
+      .hero-content, .two-columns { grid-template-columns: 1fr; }
+      .grid { grid-template-columns: 1fr; }
+      .navbar { padding: 14px 0; align-items: flex-start; flex-direction: column; }
+      nav { gap: 12px; }
+      .hero { padding: 55px 0; }
+      section { padding: 45px 0; }
+    }
+
+    @media (max-width: 450px) {
+      .form-grid { grid-template-columns: 1fr; }
+      .full { grid-column: auto; }
     }
   </style>
 </head>
 
 <body>
 <header>
-  <div class="container nav">
-    <a class="logo" href="#inicio">👟 Palmilha<span>dos</span></a>
-    <button class="menu-btn" id="menuBtn" type="button" aria-label="Abrir menu"
-      aria-expanded="false" aria-controls="navLinks">☰</button>
-    <nav class="nav-links" id="navLinks" aria-label="Menu principal">
+  <div class="container navbar">
+    <a class="logo" href="#inicio">👟 Palmilhados</a>
+    <nav aria-label="Navegação principal">
       <a href="#inicio">Início</a>
       <a href="#produtos">Produtos</a>
-      <a href="#materiais">Materiais</a>
-      <a href="#sobre">Sobre nós</a>
-      <a href="#duvidas">Dúvidas</a>
-      <a href="#pedido">Fazer pedido</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#pedido">Comprar</a>
+      <a href="#suporte">Suporte</a>
     </nav>
   </div>
 </header>
 
 <main>
   <section class="hero" id="inicio">
-    <div class="container hero-grid">
+    <div class="container hero-content">
       <div>
-        <span class="eyebrow">PALMILHADOS · CONFORTO EM CADA PASSO</span>
-        <h1>Seu caminho.<br>Seu conforto.<br><span>Seu próximo passo.</span></h1>
-        <p>Encontre opções de palmilhas para o dia a dia, atividades esportivas e suporte no calçado.</p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="#produtos">Conhecer produtos →</a>
-          <a class="btn btn-outline" href="#pedido">Comprar agora</a>
-        </div>
+        <span class="eyebrow">Conforto em cada passo</span>
+        <h1>Seus passos merecem mais conforto.</h1>
+        <p>
+          Conheça a linha Palmilhados e encontre uma opção para acompanhar
+          sua rotina, seus treinos e seus momentos de descanso.
+        </p>
+        <a class="button" href="#produtos">Conhecer produtos</a>
       </div>
-      <div class="hero-art">
-        <div class="hero-circle"><span class="hero-shoe" aria-hidden="true">👟</span></div>
-        <span class="float-label float-one">✨ Conforto diário</span>
-        <span class="float-label float-two">🏃 Linha esportiva</span>
+      <div class="hero-visual">
+        <div>
+          <div class="shoe-icon">👟</div>
+          <h2>Seu conforto começa aqui.</h2>
+          <p>Escolha a palmilha ideal para sua rotina.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="container benefits" aria-label="Benefícios">
-    <div class="benefit"><span class="benefit-icon">👣</span><div><strong>Para sua rotina</strong><small>Opções para o dia a dia</small></div></div>
-    <div class="benefit"><span class="benefit-icon">🏃</span><div><strong>Para se movimentar</strong><small>Uma proposta esportiva</small></div></div>
-    <div class="benefit"><span class="benefit-icon">📦</span><div><strong>Pedido online</strong><small>Solicite pelo próprio site</small></div></div>
-  </section>
-
-  <section class="section" id="produtos">
+  <section id="produtos">
     <div class="container">
       <div class="section-heading">
-        <small>Nosso catálogo</small>
-        <h2>Encontre sua palmilha</h2>
-        <p>Escolha o modelo ideal para sua rotina e confira os preços.</p>
+        <h2>Nossos produtos</h2>
+        <p>Escolha sua opção e faça seu pedido.</p>
       </div>
 
-      <div class="products">
-        <article class="product">
-          <div class="product-art"><span class="emoji" aria-hidden="true">👟</span><span class="tag">DIA A DIA</span></div>
-          <div class="product-content">
+      <div class="grid">
+        <article class="card">
+          <div class="product-image" aria-label="Imagem ilustrativa">👟</div>
+          <div class="card-body">
             <h3>Palmilhados Comfort</h3>
-            <p>Uma opção pensada para acompanhar sua rotina e o uso cotidiano.</p>
-            <ul>
-              <li>Proposta para uso diário</li>
-              <li>Confira a numeração disponível</li>
-              <li>Verifique a compatibilidade com o calçado</li>
-            </ul>
-            <div class="price">R$ 40,00 <small>/ par</small></div>
-            <button class="btn btn-blue choose-product" type="button" data-product="comfort">Escolher Comfort</button>
+            <p>Uma opção para acompanhar o conforto da sua rotina diária.</p>
+            <div class="price">R$ 40,00</div>
+            <button class="button secondary" type="button"
+              onclick="selecionarProduto('comfort')">Escolher produto</button>
           </div>
         </article>
 
-        <article class="product">
-          <div class="product-art"><span class="emoji" aria-hidden="true">🏃</span><span class="tag">ESPORTIVA</span></div>
-          <div class="product-content">
+        <article class="card">
+          <div class="product-image" aria-label="Imagem ilustrativa">🏃</div>
+          <div class="card-body">
             <h3>Palmilhados Sport</h3>
-            <p>Uma proposta esportiva com foco no ajuste ao calçado durante as atividades.</p>
-            <ul>
-              <li>Proposta para atividades físicas</li>
-              <li>Conforto conforme o material utilizado</li>
-              <li>Confira a compatibilidade</li>
-            </ul>
-            <div class="price">R$ 50,00 <small>/ par</small></div>
-            <button class="btn btn-blue choose-product" type="button" data-product="sport">Escolher Sport</button>
+            <p>Uma opção voltada para quem busca conforto durante os treinos.</p>
+            <div class="price">R$ 50,00</div>
+            <button class="button secondary" type="button"
+              onclick="selecionarProduto('sport')">Escolher produto</button>
           </div>
         </article>
 
-        <article class="product">
-          <div class="product-art"><span class="emoji" aria-hidden="true">🦶</span><span class="tag">SUPORTE</span></div>
-          <div class="product-content">
+        <article class="card">
+          <div class="product-image" aria-label="Imagem ilustrativa">🦶</div>
+          <div class="card-body">
             <h3>Palmilhados Support</h3>
-            <p>Uma opção voltada a quem procura suporte e ajuste dentro do calçado.</p>
-            <ul>
-              <li>Proposta de suporte</li>
-              <li>Consulte os detalhes do modelo</li>
-              <li>Escolha conforme seu calçado</li>
-            </ul>
-            <div class="price">R$ 60,00 <small>/ par</small></div>
-            <button class="btn btn-blue choose-product" type="button" data-product="support">Escolher Support</button>
+            <p>Uma opção de suporte para o uso cotidiano, conforme o calçado.</p>
+            <div class="price">R$ 60,00</div>
+            <button class="button secondary" type="button"
+              onclick="selecionarProduto('support')">Escolher produto</button>
           </div>
         </article>
       </div>
-
-      <div class="combo">
-        <div>
-          <span class="combo-label">OFERTA COMBO</span>
-          <h3>Combo Palmilhados — 3 pares</h3>
-          <p>Um par Comfort + um par Sport + um par Support.</p>
-          <p><strong>Os três pares juntos pelo preço especial de R$ 50,00.</strong></p>
-        </div>
-        <div>
-          <div class="combo-price">R$ 50,00<small>pelos três pares juntos</small></div>
-          <button class="btn btn-primary choose-product" type="button" data-product="combo">Escolher combo →</button>
-        </div>
-      </div>
-
-      <p class="fine-print">Preços dos produtos conforme a tabela informada. Estoque, frete e prazo precisam ser confirmados antes do pagamento.</p>
+      <p class="note" style="text-align:center;margin-top:20px">
+        Os produtos acima usam ícones ilustrativos. Você pode trocar os ícones
+        pelas fotos reais da Palmilhados depois.
+      </p>
     </div>
   </section>
 
-  <section class="section light" id="materiais">
+  <section id="sobre" style="background:#e9eff6">
     <div class="container">
       <div class="section-heading">
-        <small>Conheça os materiais</small>
-        <h2>O que compõe uma palmilha?</h2>
-        <p>Os materiais podem influenciar a maciez, a flexibilidade e a experiência de uso.</p>
+        <h2>Por que escolher a Palmilhados?</h2>
+        <p>Uma experiência de compra simples e transparente.</p>
       </div>
-      <div class="materials">
-        <article class="material"><div class="material-icon">☁️</div><h3>Espuma</h3><p>Dependendo do tipo e da densidade, pode proporcionar uma sensação de maciez.</p></article>
-        <article class="material"><div class="material-icon">🧩</div><h3>EVA</h3><p>Material leve usado em diferentes produtos. A resposta varia conforme a formulação e a espessura.</p></article>
-        <article class="material"><div class="material-icon">🧵</div><h3>Tecido e revestimento</h3><p>O revestimento pode influenciar o toque e o atrito dentro do calçado.</p></article>
-      </div>
-      <div class="notice"><strong>Importante:</strong> os materiais acima são exemplos gerais. Confirme a composição real de cada palmilha antes de anunciar uma característica específica.</div>
-    </div>
-  </section>
-
-  <section class="section" id="escolher">
-    <div class="container choose-grid">
-      <div class="choose-art"><div><div class="emoji">👣</div><h3>Um passo de cada vez</h3><p>Escolha com atenção à sua rotina e ao seu calçado.</p></div></div>
-      <div class="choose-copy">
-        <h2>Como escolher sua palmilha?</h2>
-        <p>Confira estas dicas antes de realizar seu pedido.</p>
-        <div class="step"><span class="step-num">1</span><div><strong>Identifique o uso</strong><p>Considere se deseja uma opção para o dia a dia, esporte ou suporte.</p></div></div>
-        <div class="step"><span class="step-num">2</span><div><strong>Confira a numeração</strong><p>Verifique o tamanho do calçado e a compatibilidade.</p></div></div>
-        <div class="step"><span class="step-num">3</span><div><strong>Confirme os detalhes</strong><p>Confira disponibilidade, frete e prazo antes de pagar.</p></div></div>
-        <a class="btn btn-blue" href="#pedido">Fazer meu pedido →</a>
+      <div class="grid">
+        <article class="feature">
+          <span>👣</span>
+          <h3>Conforto</h3>
+          <p>Opções pensadas para diferentes necessidades de uso.</p>
+        </article>
+        <article class="feature">
+          <span>💳</span>
+          <h3>Pagamento Pix</h3>
+          <p>Consulte os dados da cobrança e pague usando seu aplicativo bancário.</p>
+        </article>
+        <article class="feature">
+          <span>💬</span>
+          <h3>Atendimento</h3>
+          <p>Entre em contato para esclarecer dúvidas sobre seu pedido.</p>
+        </article>
       </div>
     </div>
   </section>
 
-  <section class="section light" id="sobre">
-    <div class="container">
-      <div class="about">
-        <div>
-          <span class="eyebrow">NOSSA MARCA</span>
-          <h2>Palmilhados: conforto em cada passo.</h2>
-          <p>A Palmilhados tem a proposta de oferecer opções para diferentes rotinas, calçados e formas de se movimentar.</p>
-          <p>Nosso objetivo é apresentar os produtos e os preços de forma clara para ajudar cada cliente a escolher.</p>
-          <a class="btn btn-primary" href="#produtos">Conhecer o catálogo</a>
-        </div>
-        <div class="about-points">
-          <div class="about-point"><strong>01 · Rotina</strong><span>Uma opção para o uso diário.</span></div>
-          <div class="about-point"><strong>02 · Movimento</strong><span>Uma linha proposta para atividades esportivas.</span></div>
-          <div class="about-point"><strong>03 · Escolha</strong><span>Produtos e valores apresentados de forma clara.</span></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="duvidas">
-    <div class="container">
-      <div class="section-heading"><small>Perguntas frequentes</small><h2>Tire suas dúvidas</h2></div>
-      <div class="faq">
-        <details><summary>Quais são os preços?</summary><p>Comfort: R$ 40,00 por par. Sport: R$ 50,00 por par. Support: R$ 60,00 por par. O combo com um par de cada linha custa R$ 50,00 no total.</p></details>
-        <details><summary>O que vem no combo?</summary><p>O combo inclui um par Comfort, um par Sport e um par Support, pelo valor total de R$ 50,00.</p></details>
-        <details><summary>Posso escolher o tamanho?</summary><p>Sim. Selecione a numeração no formulário. A disponibilidade precisa ser confirmada pela loja.</p></details>
-        <details><summary>O valor inclui frete?</summary><p>Não. O frete e o prazo de entrega serão confirmados pela loja antes do pagamento.</p></details>
-        <details><summary>O pedido é feito pelo site?</summary><p>Sim. Com o formulário conectado, você pode enviar a solicitação pela própria página, sem abrir o aplicativo de e-mail.</p></details>
-        <details><summary>O pedido é confirmado automaticamente?</summary><p>O site envia a solicitação, mas o estoque, o pagamento e a entrega precisam ser confirmados pela loja.</p></details>
-      </div>
-    </div>
-  </section>
-
-  <section class="section light" id="pedido">
+  <section id="pedido">
     <div class="container">
       <div class="section-heading">
-        <small>Compre online</small>
         <h2>Faça seu pedido</h2>
-        <p>Preencha seus dados, confira o total e envie sua solicitação sem sair desta página.</p>
+        <p>Preencha seus dados e confira o valor antes de continuar.</p>
       </div>
 
-      <div class="order-layout">
-        <div class="order-card">
-          <h3>Dados do pedido</h3>
-          <p class="order-intro">Os campos marcados com * são obrigatórios.</p>
+      <div class="two-columns">
+        <form class="panel" id="pedidoForm">
+          <h2>Seus dados</h2>
 
-          <form id="orderForm">
-            <div class="field">
+          <div class="form-grid">
+            <div class="full">
+              <label for="nome">Nome completo *</label>
+              <input id="nome" name="nome" autocomplete="name" required>
+            </div>
+
+            <div>
+              <label for="email">E-mail *</label>
+              <input id="email" name="email" type="email" autocomplete="email" required>
+            </div>
+
+            <div>
+              <label for="telefone">Celular *</label>
+              <input id="telefone" name="telefone" type="tel" autocomplete="tel" required>
+            </div>
+
+            <div>
               <label for="produto">Produto *</label>
               <select id="produto" name="produto" required>
-                <option value="">Selecione uma opção</option>
-                <option value="comfort">Palmilhados Comfort — R$ 40,00 por par</option>
-                <option value="sport">Palmilhados Sport — R$ 50,00 por par</option>
-                <option value="support">Palmilhados Support — R$ 60,00 por par</option>
-                <option value="combo">Combo com os três pares — R$ 50,00</option>
+                <option value="comfort">Palmilhados Comfort — R$ 40,00</option>
+                <option value="sport">Palmilhados Sport — R$ 50,00</option>
+                <option value="support">Palmilhados Support — R$ 60,00</option>
               </select>
             </div>
 
-            <div class="two-cols">
-              <div class="field">
-                <label for="tamanho">Tamanho do calçado *</label>
-                <select id="tamanho" name="tamanho" required>
-                  <option value="">Selecione</option>
-                  <option>33</option><option>34</option><option>35</option>
-                  <option>36</option><option>37</option><option>38</option>
-                  <option>39</option><option>40</option><option>41</option>
-                  <option>42</option><option>43</option><option>44</option>
-                </select>
-              </div>
-              <div class="field">
-                <label for="quantidade">Quantidade de pares/combos *</label>
-                <input id="quantidade" name="quantidade" type="number" min="1" max="20" value="1" required>
-              </div>
+            <div>
+              <label for="quantidade">Quantidade de pares *</label>
+              <input id="quantidade" name="quantidade" type="number"
+                min="1" max="20" value="1" required>
             </div>
 
-            <div class="field">
-              <label for="nome">Nome completo *</label>
-              <input id="nome" name="nome" autocomplete="name" maxlength="100" required placeholder="Seu nome completo">
+            <div>
+              <label for="tamanho">Tamanho do calçado *</label>
+              <input id="tamanho" name="tamanho" type="number"
+                min="15" max="55" required>
             </div>
 
-            <div class="field">
-              <label for="emailCliente">Seu e-mail *</label>
-              <input id="emailCliente" name="emailCliente" type="email" autocomplete="email" maxlength="150" required placeholder="voce@exemplo.com">
-            </div>
-
-            <div class="field">
-              <label for="telefone">Telefone para contato *</label>
-              <input id="telefone" name="telefone" type="tel" autocomplete="tel" maxlength="25" required placeholder="(11) 99999-9999">
-            </div>
-
-            <div class="field">
+            <div>
               <label for="cep">CEP *</label>
-              <input id="cep" name="cep" autocomplete="postal-code" inputmode="numeric" maxlength="9" required placeholder="00000-000">
+              <input id="cep" name="cep" autocomplete="postal-code"
+                inputmode="numeric" placeholder="00000-000" required>
             </div>
 
-            <div class="field">
+            <div class="full">
               <label for="endereco">Rua, número e complemento *</label>
-              <input id="endereco" name="endereco" autocomplete="street-address" maxlength="180" required placeholder="Rua, número, complemento">
+              <input id="endereco" name="endereco" autocomplete="street-address" required>
             </div>
 
-            <div class="two-cols">
-              <div class="field">
-                <label for="cidade">Cidade *</label>
-                <input id="cidade" name="cidade" autocomplete="address-level2" maxlength="80" required>
-              </div>
-              <div class="field">
-                <label for="estado">Estado *</label>
-                <select id="estado" name="estado" autocomplete="address-level1" required>
-                  <option value="">Selecione</option>
-                  <option>AC</option><option>AL</option><option>AP</option><option>AM</option>
-                  <option>BA</option><option>CE</option><option>DF</option><option>ES</option>
-                  <option>GO</option><option>MA</option><option>MT</option><option>MS</option>
-                  <option>MG</option><option>PA</option><option>PB</option><option>PR</option>
-                  <option>PE</option><option>PI</option><option>RJ</option><option>RN</option>
-                  <option>RS</option><option>RO</option><option>RR</option><option>SC</option>
-                  <option>SP</option><option>SE</option><option>TO</option>
-                </select>
-              </div>
+            <div>
+              <label for="cidade">Cidade *</label>
+              <input id="cidade" name="cidade" autocomplete="address-level2" required>
             </div>
 
-            <div class="field">
+            <div>
+              <label for="estado">Estado (UF) *</label>
+              <input id="estado" name="estado" maxlength="2"
+                autocomplete="address-level1" placeholder="SP" required>
+            </div>
+
+            <div class="full">
               <label for="observacoes">Observações (opcional)</label>
-              <textarea id="observacoes" name="observacoes" maxlength="1000" placeholder="Informações adicionais sobre seu pedido"></textarea>
+              <textarea id="observacoes" name="observacoes" rows="3"></textarea>
             </div>
+          </div>
 
-            <label class="consent">
-              <input id="consentimento" name="consentimento" type="checkbox" value="sim" required>
-              <span>Autorizo o uso dos dados informados para tratar deste pedido.</span>
+          <div class="total-box">
+            <div>Valor dos produtos</div>
+            <strong id="total">R$ 40,00</strong>
+            <p class="note">Frete não calculado. Confirme o custo de entrega com a loja antes de pagar.</p>
+          </div>
+
+          <input type="hidden" name="valor_produtos" id="valorProdutos">
+          <input type="hidden" name="status_pagamento" id="statusPagamento"
+            value="Aguardando pagamento; não confirmado automaticamente">
+          <input type="hidden" name="_subject" value="Novo pedido - Palmilhados">
+
+          <div class="check-row">
+            <input type="checkbox" id="consentimento" required>
+            <label for="consentimento">
+              Confirmo que os dados estão corretos e autorizo seu uso para
+              processar este pedido e entrar em contato comigo.
             </label>
+          </div>
 
-            <button class="btn btn-primary submit-btn" id="submitBtn" type="submit">Enviar pedido pelo site →</button>
-            <div class="status" id="status" role="status" aria-live="polite"></div>
+          <button class="button" style="width:100%" type="button"
+            id="gerarPix">Gerar QR Code Pix</button>
 
-            <div class="order-notice">
-              <strong>Atenção:</strong> enviar uma solicitação não confirma estoque nem pagamento. A loja deverá confirmar o pedido e combinar a entrega.
-            </div>
-          </form>
+          <p class="note">
+            Gerar o código não confirma o pagamento. Verifique os dados do
+            recebedor no aplicativo do banco antes de concluir.
+          </p>
+
+          <div class="pix-area" id="pixArea">
+            <h3>Escaneie para pagar</h3>
+            <p>Confira o valor e o nome do recebedor no seu aplicativo bancário.</p>
+            <div class="qr-box"><div id="qrcode"></div></div>
+
+            <label for="codigoPix">Pix Copia e Cola</label>
+            <textarea id="codigoPix" class="pix-code" readonly></textarea>
+            <button class="button pix" type="button" id="copiarPix">
+              Copiar código Pix
+            </button>
+
+            <p class="note">
+              Este QR Code é estático e não confirma o recebimento. Não marque
+              o pedido como pago sem verificar o crédito na conta.
+            </p>
+
+            <button class="button secondary" type="button" id="enviarPedido">
+              Enviar pedido para a Palmilhados
+            </button>
+            <p class="note">
+              Enviar o pedido não é uma confirmação de pagamento.
+            </p>
+            <div class="status" id="mensagemPix" role="status" aria-live="polite"></div>
+          </div>
+        </form>
+
+        <aside class="panel">
+          <h2>Como funciona?</h2>
+          <ol>
+            <li>Escolha o produto e a quantidade.</li>
+            <li>Informe os dados para entrega.</li>
+            <li>Gere o QR Code Pix.</li>
+            <li>Confira o recebedor e pague pelo aplicativo do seu banco.</li>
+            <li>Envie o pedido e aguarde a confirmação da loja.</li>
+          </ol>
+
+          <h3>Antes de pagar</h3>
+          <p>
+            Confirme o valor total, os dados do recebedor e o prazo de entrega.
+            O site ainda não verifica automaticamente se o pagamento foi recebido.
+          </p>
+          <a class="button secondary" href="#suporte">Precisa de ajuda?</a>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section id="suporte" style="background:#e9eff6">
+    <div class="container">
+      <div class="section-heading">
+        <h2>Suporte ao cliente</h2>
+        <p>Estamos aqui para ajudar com suas dúvidas.</p>
+      </div>
+
+      <div class="two-columns">
+        <div class="panel faq">
+          <h3>Perguntas frequentes</h3>
+
+          <details>
+            <summary>Como faço um pedido?</summary>
+            <p>Escolha um produto, preencha os dados e siga as instruções de pagamento.</p>
+          </details>
+
+          <details>
+            <summary>Meu pagamento foi confirmado?</summary>
+            <p>Consulte o aplicativo bancário e aguarde a confirmação da loja. Este site não consulta automaticamente os pagamentos.</p>
+          </details>
+
+          <details>
+            <summary>Como consulto a entrega?</summary>
+            <p>Entre em contato com o atendimento informando os dados do pedido.</p>
+          </details>
+
+          <details>
+            <summary>Posso tirar dúvidas antes de comprar?</summary>
+            <p>Sim! Use o botão de atendimento para conversar com a Palmilhados.</p>
+          </details>
         </div>
 
-        <aside class="summary">
-          <h3>Resumo do pedido</h3>
-          <p>O total é calculado automaticamente.</p>
-          <div class="summary-row"><span>Produto</span><span id="sumProduct">—</span></div>
-          <div class="summary-row"><span>Tamanho</span><span id="sumSize">—</span></div>
-          <div class="summary-row"><span>Quantidade</span><span id="sumQty">1</span></div>
-          <div class="summary-row"><span>Preço por unidade do pedido</span><span id="sumUnit">R$ 0,00</span></div>
-          <div class="summary-row summary-total"><span>Total dos produtos</span><span id="sumTotal">R$ 0,00</span></div>
-          <div class="summary-row"><span>Cliente</span><span id="sumName">—</span></div>
-          <div class="summary-row"><span>Cidade/UF</span><span id="sumCity">—</span></div>
-          <p class="summary-note">O combo corresponde a três pares por combo. O frete não está incluído. A loja confirmará disponibilidade, frete, pagamento e entrega.</p>
-        </aside>
+        <div class="panel">
+          <h3>Fale com a Palmilhados</h3>
+          <p>Precisa de ajuda com um produto, pagamento ou entrega? Entre em contato.</p>
+
+          <label for="duvida">Sua dúvida</label>
+          <textarea id="duvida" rows="4"
+            placeholder="Escreva sua dúvida aqui..."></textarea>
+
+          <div class="support-links">
+            <button class="button secondary" type="button" id="abrirWhatsApp">
+              💬 Falar pelo WhatsApp
+            </button>
+            <a class="button" href="#pedido">Voltar ao pedido</a>
+          </div>
+
+          <p class="note">
+            O atendimento por WhatsApp abrirá uma conversa com a mensagem
+            preenchida. Você precisará enviá-la no próprio WhatsApp.
+          </p>
+        </div>
       </div>
     </div>
   </section>
@@ -687,235 +718,297 @@
 
 <footer>
   <div class="container">
-    <div class="footer-grid">
-      <div>
-        <a class="logo" href="#inicio">👟 Palmilha<span>dos</span></a>
-        <p style="margin-top:12px">Conforto em cada passo.</p>
-      </div>
-      <div>
-        <h3>Navegação</h3>
-        <div class="footer-links">
-          <a href="#produtos">Produtos e preços</a>
-          <a href="#materiais">Materiais</a>
-          <a href="#sobre">Sobre nós</a>
-          <a href="#duvidas">Perguntas frequentes</a>
-        </div>
-      </div>
-      <div>
-        <h3>Pedidos</h3>
-        <p>Escolha seu produto e envie sua solicitação diretamente pelo formulário do site.</p>
-        <p style="margin-top:10px"><a href="#pedido">Fazer pedido →</a></p>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>© <span id="year"></span> Palmilhados. Todos os direitos reservados.</span>
-      <a href="#inicio">Voltar ao topo ↑</a>
-    </div>
+    <h2>👟 Palmilhados</h2>
+    <p>Conforto em cada passo.</p>
+    <p>&copy; <span id="ano"></span> Palmilhados. Todos os direitos reservados.</p>
   </div>
 </footer>
 
+<a class="whatsapp-float" id="whatsappFlutuante"
+  href="#suporte" aria-label="Acessar suporte da Palmilhados">
+  💬 Suporte
+</a>
+
+<!-- Biblioteca para gerar o QR Code no navegador -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
 <script>
-  /*
-    CONFIGURAÇÃO NECESSÁRIA:
-    Crie um formulário em https://formspree.io/
-    e substitua COLOQUE_SEU_ID pelo ID que o serviço fornecer.
+  // ==========================================================
+  // CONFIGURAÇÃO DA LOJA — PREENCHA ANTES DE PUBLICAR
+  // ==========================================================
 
-    Exemplo de formato:
-    https://formspree.io/f/abcdefgh
+  // Cole aqui sua chave Pix real cadastrada no banco.
+  // Não use um número de exemplo: confirme a chave no aplicativo bancário.
+  const PIX_KEY = "11991106862";
 
-    Não coloque seu e-mail particular neste código.
-  */
-const FORMSPREE_ENDPOINT = "https://formspree.io/f/xqpebdjb";
-  
-  const PRODUTOS = {
-    comfort: {
-      nome: "Palmilhados Comfort",
-      preco: 4000,
-      unidade: "par"
-    },
-    sport: {
-      nome: "Palmilhados Sport",
-      preco: 5000,
-      unidade: "par"
-    },
-    support: {
-      nome: "Palmilhados Support",
-      preco: 6000,
-      unidade: "par"
-    },
-    combo: {
-      nome: "Combo Palmilhados: Comfort + Sport + Support",
-      preco: 5000,
-      unidade: "combo com 3 pares"
-    }
+  // Nome do recebedor registrado na conta Pix.
+  const PIX_RECEIVER_NAME = "Marcelo de souza pandori";
+
+  // Cidade do recebedor, sem acentos, conforme as regras do Pix.
+  const PIX_RECEIVER_CITY = "SAO PAULO";
+
+  // Coloque o número de WhatsApp da loja com código do país e DDD.
+  // Exemplo de formato: 5511999999999 — troque pelo número correto.
+  const WHATSAPP_NUMBER = "5511991106862";
+
+  // Formspree já configurado para receber os pedidos.
+  const FORMSPREE_ENDPOINT = "https://formspree.io/f/xqpebdjb";
+
+  const PRODUCTS = {
+    comfort: { name: "Palmilhados Comfort", price: 40 },
+    sport: { name: "Palmilhados Sport", price: 50 },
+    support: { name: "Palmilhados Support", price: 60 }
   };
 
-  const form = document.getElementById("orderForm");
-  const produto = document.getElementById("produto");
-  const tamanho = document.getElementById("tamanho");
-  const quantidade = document.getElementById("quantidade");
-  const statusMsg = document.getElementById("status");
-  const submitBtn = document.getElementById("submitBtn");
+  const productSelect = document.getElementById("produto");
+  const quantityInput = document.getElementById("quantidade");
+  const totalDisplay = document.getElementById("total");
+  const valueHidden = document.getElementById("valorProdutos");
+  const pixArea = document.getElementById("pixArea");
+  const pixCode = document.getElementById("codigoPix");
+  const pixMessage = document.getElementById("mensagemPix");
+  let currentPixPayload = "";
 
-  function dinheiro(centavos) {
-    return (centavos / 100).toLocaleString("pt-BR", {
+  function money(value) {
+    return value.toLocaleString("pt-BR", {
       style: "currency",
       currency: "BRL"
     });
   }
 
-  function quantidadeValida() {
-    const qtd = Number(quantidade.value);
-    return Number.isInteger(qtd) && qtd >= 1 && qtd <= 20;
+  function getOrder() {
+    const product = PRODUCTS[productSelect.value];
+    const quantity = Number(quantityInput.value);
+
+    if (!product || !Number.isInteger(quantity) || quantity < 1 || quantity > 20) {
+      throw new Error("Escolha uma quantidade entre 1 e 20 pares.");
+    }
+
+    return {
+      product,
+      quantity,
+      total: product.price * quantity
+    };
   }
 
-  function atualizarResumo() {
-    const item = PRODUTOS[produto.value];
-    const qtd = quantidadeValida() ? Number(quantidade.value) : 1;
-
-    document.getElementById("sumProduct").textContent =
-      item ? item.nome : "—";
-    document.getElementById("sumSize").textContent =
-      tamanho.value || "—";
-    document.getElementById("sumQty").textContent = String(qtd);
-    document.getElementById("sumUnit").textContent =
-      item ? dinheiro(item.preco) : dinheiro(0);
-    document.getElementById("sumTotal").textContent =
-      item ? dinheiro(item.preco * qtd) : dinheiro(0);
-    document.getElementById("sumName").textContent =
-      document.getElementById("nome").value.trim() || "—";
-
-    const cidade = document.getElementById("cidade").value.trim();
-    const estado = document.getElementById("estado").value;
-    document.getElementById("sumCity").textContent =
-      cidade && estado ? cidade + "/" + estado : "—";
+  function updateTotal() {
+    try {
+      const order = getOrder();
+      totalDisplay.textContent = money(order.total);
+      valueHidden.value = money(order.total);
+    } catch (error) {
+      totalDisplay.textContent = "Confira a quantidade";
+      valueHidden.value = "";
+    }
   }
 
-  function mostrarStatus(mensagem, tipo) {
-    statusMsg.textContent = mensagem;
-    statusMsg.className = "status visible " + tipo;
-  }
-
-  // Menu de navegação para celular
-  const menuBtn = document.getElementById("menuBtn");
-  const navLinks = document.getElementById("navLinks");
-
-  menuBtn.addEventListener("click", function () {
-    const aberto = navLinks.classList.toggle("open");
-    menuBtn.setAttribute("aria-expanded", String(aberto));
-    menuBtn.textContent = aberto ? "✕" : "☰";
-    menuBtn.setAttribute("aria-label", aberto ? "Fechar menu" : "Abrir menu");
-  });
-
-  navLinks.querySelectorAll("a").forEach(function (link) {
-    link.addEventListener("click", function () {
-      navLinks.classList.remove("open");
-      menuBtn.setAttribute("aria-expanded", "false");
-      menuBtn.textContent = "☰";
-    });
-  });
-
-  document.getElementById("year").textContent = new Date().getFullYear();
-
-  // Atualização do resumo
-  [
-    produto, tamanho, quantidade,
-    document.getElementById("nome"),
-    document.getElementById("cidade"),
-    document.getElementById("estado")
-  ].forEach(function (campo) {
-    campo.addEventListener("input", atualizarResumo);
-    campo.addEventListener("change", atualizarResumo);
-  });
-
-  // Botões do catálogo selecionam o produto no formulário
-  document.querySelectorAll(".choose-product").forEach(function (botao) {
-    botao.addEventListener("click", function () {
-      produto.value = botao.dataset.product;
-      atualizarResumo();
+  function selecionarProduto(productId) {
+    if (PRODUCTS[productId]) {
+      productSelect.value = productId;
+      updateTotal();
       document.getElementById("pedido").scrollIntoView({ behavior: "smooth" });
-    });
-  });
+    }
+  }
 
-  // Envio do pedido dentro do próprio site
-  form.addEventListener("submit", async function (event) {
-    event.preventDefault();
+  productSelect.addEventListener("change", updateTotal);
+  quantityInput.addEventListener("input", updateTotal);
+  updateTotal();
+
+  // Cria campos EMV/BR Code usados no Pix.
+  function tlv(id, value) {
+    const length = new TextEncoder().encode(value).length;
+    return id + String(length).padStart(2, "0") + value;
+  }
+
+  function crc16(payload) {
+    let crc = 0xFFFF;
+
+    for (let i = 0; i < payload.length; i++) {
+      crc ^= payload.charCodeAt(i) << 8;
+
+      for (let bit = 0; bit < 8; bit++) {
+        if (crc & 0x8000) {
+          crc = ((crc << 1) ^ 0x1021) & 0xFFFF;
+        } else {
+          crc = (crc << 1) & 0xFFFF;
+        }
+      }
+    }
+
+    return crc.toString(16).toUpperCase().padStart(4, "0");
+  }
+
+  function buildPixPayload(key, amount) {
+    const name = PIX_RECEIVER_NAME.trim().toUpperCase();
+    const city = PIX_RECEIVER_CITY.trim().toUpperCase();
+
+    if (!key || key === "COLOQUE_SUA_CHAVE_PIX_AQUI") {
+      throw new Error("Configure sua chave Pix no código antes de gerar o QR Code.");
+    }
+
+    if (!name || name.length > 25 || !city || city.length > 15) {
+      throw new Error("Confira o nome e a cidade do recebedor nas configurações.");
+    }
+
+    if (/[^\x20-\x7E]/.test(name + city)) {
+      throw new Error("Use letras sem acentos no nome e na cidade do recebedor.");
+    }
+
+    const accountInfo =
+      tlv("00", "BR.GOV.BCB.PIX") +
+      tlv("01", key);
+
+    const additionalData = tlv("05", "***");
+
+    let payload =
+      tlv("00", "01") +
+      tlv("01", "11") +
+      tlv("26", accountInfo) +
+      tlv("52", "0000") +
+      tlv("53", "986") +
+      tlv("54", amount.toFixed(2)) +
+      tlv("58", "BR") +
+      tlv("59", name) +
+      tlv("60", city) +
+      tlv("62", additionalData) +
+      "6304";
+
+    payload += crc16(payload);
+    return payload;
+  }
+
+  document.getElementById("gerarPix").addEventListener("click", function () {
+    const form = document.getElementById("pedidoForm");
 
     if (!form.reportValidity()) return;
 
-    if (!quantidadeValida()) {
-      mostrarStatus("Escolha uma quantidade entre 1 e 20.", "error");
-      quantidade.focus();
+    try {
+      const order = getOrder();
+
+      if (typeof QRCode === "undefined") {
+        throw new Error("Não foi possível carregar a biblioteca do QR Code. Verifique sua conexão.");
+      }
+
+      currentPixPayload = buildPixPayload(PIX_KEY, order.total);
+      document.getElementById("qrcode").innerHTML = "";
+
+      new QRCode(document.getElementById("qrcode"), {
+        text: currentPixPayload,
+        width: 220,
+        height: 220,
+        correctLevel: QRCode.CorrectLevel.M
+      });
+
+      pixCode.value = currentPixPayload;
+      pixArea.classList.add("visible");
+
+      pixMessage.textContent =
+        "QR Code gerado para " + money(order.total) +
+        ". Antes de pagar, confira o nome do recebedor exibido pelo seu banco.";
+
+      document.getElementById("statusPagamento").value =
+        "Aguardando conferência manual; pagamento não confirmado automaticamente";
+
+      pixArea.scrollIntoView({ behavior: "smooth", block: "start" });
+    } catch (error) {
+      alert(error.message || "Não foi possível gerar o QR Code.");
+    }
+  });
+
+  document.getElementById("copiarPix").addEventListener("click", async function () {
+    if (!currentPixPayload) {
+      pixMessage.textContent = "Gere o QR Code primeiro.";
       return;
     }
 
-    const item = PRODUTOS[produto.value];
+    try {
+      await navigator.clipboard.writeText(currentPixPayload);
+      pixMessage.textContent = "Código Pix copiado. Confira o recebedor antes de pagar.";
+    } catch (error) {
+      pixCode.focus();
+      pixCode.select();
+      pixMessage.textContent = "Selecione e copie o código Pix manualmente.";
+    }
+  });
 
-    if (!item) {
-      mostrarStatus("Selecione um produto antes de continuar.", "error");
-      produto.focus();
+  document.getElementById("enviarPedido").addEventListener("click", async function () {
+    const form = document.getElementById("pedidoForm");
+
+    if (!form.reportValidity()) return;
+
+    if (!currentPixPayload) {
+      pixMessage.textContent = "Gere o QR Code Pix antes de enviar o pedido.";
       return;
     }
 
     if (FORMSPREE_ENDPOINT.includes("COLOQUE_SEU_ID")) {
-      mostrarStatus(
-        "O formulário ainda não está conectado. Crie seu formulário no Formspree e coloque o ID dele na variável FORMSPREE_ENDPOINT do código.",
-        "error"
-      );
+      pixMessage.textContent = "Configure o endereço do Formspree no código.";
       return;
     }
 
-    const qtd = Number(quantidade.value);
-    const total = item.preco * qtd;
-    const dados = new FormData(form);
+    const order = getOrder();
+    const formData = new FormData(form);
 
-    // Campos claros para a loja receber o pedido
-    dados.set("produto", item.nome);
-    dados.set("tamanho", tamanho.value);
-    dados.set("quantidade", String(qtd));
-    dados.set("tipo_de_unidade", item.unidade);
-    dados.set("preco_por_par_ou_combo", dinheiro(item.preco));
-    dados.set("total_dos_produtos", dinheiro(total));
-    dados.set("frete", "A confirmar");
-    dados.set("_subject", "Novo pedido - Palmilhados");
+    formData.set("produto", order.product.name);
+    formData.set("quantidade", String(order.quantity));
+    formData.set("valor_produtos", money(order.total));
+    formData.set("status_pagamento",
+      "Aguardando confirmação manual. O site não verificou o recebimento.");
+    formData.set("pix_payload", currentPixPayload);
 
-    submitBtn.disabled = true;
-    submitBtn.textContent = "Enviando pedido...";
-    mostrarStatus("Enviando sua solicitação...", "success");
+    const button = document.getElementById("enviarPedido");
+    button.disabled = true;
+    button.textContent = "Enviando pedido...";
 
     try {
-      const resposta = await fetch(FORMSPREE_ENDPOINT, {
+      const response = await fetch(FORMSPREE_ENDPOINT, {
         method: "POST",
-        body: dados,
-        headers: { Accept: "application/json" }
+        body: formData,
+        headers: { "Accept": "application/json" }
       });
 
-      if (!resposta.ok) {
-        throw new Error("O serviço não aceitou o pedido.");
+      if (!response.ok) {
+        throw new Error("Não foi possível enviar o pedido ao Formspree.");
       }
 
-      mostrarStatus(
-        "Pedido enviado com sucesso! Sua solicitação foi encaminhada. A loja ainda precisa confirmar estoque, frete, pagamento e entrega.",
-        "success"
-      );
-
-      form.reset();
-      quantidade.value = "1";
-      atualizarResumo();
-
-      statusMsg.scrollIntoView({ behavior: "smooth", block: "nearest" });
-    } catch (erro) {
-      mostrarStatus(
-        "Não foi possível enviar o pedido. Verifique sua conexão e tente novamente. Se o problema continuar, confira a configuração do formulário.",
-        "error"
-      );
-    } finally {
-      submitBtn.disabled = false;
-      submitBtn.textContent = "Enviar pedido pelo site →";
+      pixMessage.textContent =
+        "Pedido enviado! Ele ainda está aguardando a conferência do pagamento pela loja. Guarde os dados do pedido.";
+      button.textContent = "Pedido enviado";
+    } catch (error) {
+      pixMessage.textContent =
+        "Não conseguimos enviar o pedido. Verifique sua conexão ou tente novamente mais tarde.";
+      button.disabled = false;
+      button.textContent = "Tentar enviar pedido novamente";
     }
   });
 
-  atualizarResumo();
+  function openWhatsApp(message) {
+    if (!/^\d{12,15}$/.test(WHATSAPP_NUMBER)) {
+      alert("Configure o número de WhatsApp da loja no código.");
+      return;
+    }
+
+    const url = "https://wa.me/" + WHATSAPP_NUMBER +
+      "?text=" + encodeURIComponent(message);
+
+    window.open(url, "_blank", "noopener,noreferrer");
+  }
+
+  document.getElementById("abrirWhatsApp").addEventListener("click", function () {
+    const doubt = document.getElementById("duvida").value.trim();
+    const message = doubt
+      ? "Olá! Tenho uma dúvida sobre a Palmilhados: " + doubt
+      : "Olá! Gostaria de atendimento da Palmilhados.";
+
+    openWhatsApp(message);
+  });
+
+  document.getElementById("whatsappFlutuante").addEventListener("click", function (event) {
+    event.preventDefault();
+    openWhatsApp("Olá! Gostaria de atendimento da Palmilhados.");
+  });
+
+  document.getElementById("ano").textContent = new Date().getFullYear();
 </script>
 </body>
 </html>
