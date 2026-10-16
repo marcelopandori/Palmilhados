@@ -1,816 +1,668 @@
-
+```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#10284c">
-<meta name="description" content="Palmilhados: conheça nossa linha de palmilhas para conforto diário e atividades esportivas.">
-<title>Palmilhados | Conforto em cada passo</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Palmilhados: palmilhas para conforto, esporte e suporte no dia a dia.">
+    <title>Palmilhados | Conforto em cada passo</title>
 
-<style>
-:root {
-  --navy: #10284c;
-  --blue: #204d82;
-  --green: #07865b;
-  --light: #f5f7fa;
-  --text: #253449;
-  --muted: #66758a;
-  --border: #e2e7ee;
-}
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; scroll-padding-top: 90px; }
-body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  color: var(--text);
-  background: white;
-  line-height: 1.65;
-}
-button, input, select, textarea { font: inherit; }
-a { -webkit-tap-highlight-color: transparent; }
-.container { width: min(1160px, 92%); margin: auto; }
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
 
-header {
-  background: var(--navy);
-  color: white;
-  position: sticky;
-  top: 0;
-  z-index: 20;
-  box-shadow: 0 3px 15px #10284c18;
-}
-.navbar {
-  min-height: 76px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 22px;
-}
-.logo {
-  color: white;
-  text-decoration: none;
-  font-size: 1.45rem;
-  font-weight: 800;
-  letter-spacing: -.5px;
-}
-.logo span { color: #91dfc0; }
-nav { display: flex; gap: 24px; flex-wrap: wrap; }
-nav a {
-  color: #f2f5fa;
-  text-decoration: none;
-  font-size: .92rem;
-  transition: color .2s;
-}
-nav a:hover { color: #91dfc0; }
+        html {
+            scroll-behavior: smooth;
+        }
 
-.hero {
-  background: linear-gradient(115deg, #10284c 0%, #173c68 65%, #245a8b 100%);
-  color: white;
-  padding: 76px 0;
-  overflow: hidden;
-}
-.hero-content {
-  display: grid;
-  grid-template-columns: 1.05fr .95fr;
-  align-items: center;
-  gap: 55px;
-}
-.eyebrow {
-  color: #a5e9cb;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-size: .77rem;
-  font-weight: 700;
-}
-h1 {
-  font-size: clamp(2.5rem, 5vw, 4.3rem);
-  line-height: 1.08;
-  letter-spacing: -1.8px;
-  margin: 18px 0;
-}
-.hero p { color: #e1e9f3; max-width: 510px; }
-.hero-image {
-  min-height: 330px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #ffffff0b;
-  border: 1px solid #ffffff25;
-  border-radius: 20px;
-  padding: 25px;
-}
-.hero-image img {
-  width: 100%;
-  max-height: 350px;
-  object-fit: contain;
-}
-.hero-placeholder {
-  text-align: center;
-  color: #dce8f5;
-}
-.hero-placeholder strong {
-  display: block;
-  font-size: 1.6rem;
-  margin-bottom: 8px;
-}
+        body {
+            background: #f5f7fa;
+            color: #17263c;
+            line-height: 1.6;
+        }
 
-.button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border: 0;
-  border-radius: 8px;
-  padding: 13px 21px;
-  background: var(--green);
-  color: white;
-  font-weight: 700;
-  text-decoration: none;
-  cursor: pointer;
-  transition: background .2s, transform .2s;
-}
-.button:hover { background: #066d4a; transform: translateY(-1px); }
-.button.secondary { background: var(--navy); }
-.button.secondary:hover { background: #204d82; }
-.button:disabled { opacity: .65; cursor: wait; transform: none; }
+        header {
+            background: #10284c;
+            color: white;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 18px;
+        }
 
-section { padding: 76px 0; }
-.section-heading { text-align: center; margin-bottom: 38px; }
-.section-heading h2 {
-  color: var(--navy);
-  font-size: clamp(1.9rem, 4vw, 2.6rem);
-  letter-spacing: -.6px;
-  line-height: 1.2;
-  margin: 0 0 12px;
-}
-.section-heading p { color: var(--muted); margin: 0; }
+        .logo {
+            font-size: 27px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
 
-.products-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 22px;
-}
-.card {
-  background: white;
-  border: 1px solid var(--border);
-  border-radius: 13px;
-  overflow: hidden;
-  box-shadow: 0 5px 22px #10284c08;
-  transition: transform .25s, box-shadow .25s;
-}
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 14px 30px #10284c14;
-}
-.product-image {
-  height: 250px;
-  padding: 18px;
-  background: #f7f8fa;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  border-bottom: 1px solid #edf0f4;
-}
-.product-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  display: block;
-  transition: transform .3s;
-}
-.card:hover .product-image img { transform: scale(1.04); }
-.card-body { padding: 21px; }
-.product-category {
-  display: inline-block;
-  color: var(--blue);
-  background: #edf3fa;
-  padding: 4px 9px;
-  border-radius: 4px;
-  font-size: .72rem;
-  font-weight: 700;
-  margin-bottom: 10px;
-}
-.card h3 { color: var(--navy); margin: 0 0 8px; font-size: 1.13rem; }
-.card p { color: var(--muted); font-size: .91rem; margin: 0; }
-.price {
-  color: var(--navy);
-  font-size: 1.55rem;
-  font-weight: 800;
-  margin: 18px 0;
-}
-.price small { font-size: .77rem; font-weight: 400; color: var(--muted); }
-.card .button { width: 100%; padding: 12px 8px; font-size: .9rem; }
-.note { color: var(--muted); font-size: .85rem; }
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 22px;
+        }
 
-.about-section { background: var(--light); }
-.about-layout {
-  display: grid;
-  grid-template-columns: .9fr 1.1fr;
-  align-items: center;
-  gap: 48px;
-}
-.about-photo {
-  min-height: 330px;
-  border-radius: 15px;
-  overflow: hidden;
-  background: #e8eef5;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.about-photo img { width: 100%; height: 100%; object-fit: cover; }
-.about-copy h2 {
-  font-size: clamp(2rem, 4vw, 2.8rem);
-  color: var(--navy);
-  line-height: 1.2;
-  margin: 12px 0;
-}
-.about-copy p { color: var(--muted); }
-.features {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
-  margin-top: 28px;
-}
-.feature {
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 18px;
-  background: white;
-}
-.feature strong { display: block; color: var(--navy); margin-bottom: 6px; }
-.feature p { margin: 0; font-size: .88rem; }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.3s;
+        }
 
-.purchase-section { background: white; }
-.two-columns {
-  display: grid;
-  grid-template-columns: 1.2fr .8fr;
-  gap: 25px;
-  align-items: start;
-}
-.panel {
-  background: white;
-  padding: 28px;
-  border: 1px solid var(--border);
-  border-radius: 13px;
-  box-shadow: 0 5px 22px #10284c08;
-}
-.panel h2, .panel h3 { color: var(--navy); margin-top: 0; }
-.form-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0 15px;
-}
-.field.full { grid-column: 1 / -1; }
-label {
-  display: block;
-  margin: 13px 0 6px;
-  font-size: .9rem;
-  font-weight: 700;
-}
-input, select, textarea {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #ccd5e0;
-  border-radius: 7px;
-  background: white;
-  color: var(--text);
-}
-input:focus, select:focus, textarea:focus {
-  outline: 2px solid #8bbbe9;
-  outline-offset: 1px;
-}
-.check-row {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  margin: 18px 0;
-}
-.check-row input { width: auto; margin-top: 7px; }
-.check-row label { margin: 0; font-weight: 400; }
-.total-box {
-  margin: 22px 0;
-  padding: 18px;
-  border-radius: 9px;
-  background: #eff7f3;
-}
-.total-box strong { color: var(--green); font-size: 1.8rem; }
-.status {
-  margin-top: 16px;
-  padding: 13px;
-  border-radius: 7px;
-  background: #edf3f9;
-  overflow-wrap: anywhere;
-}
-.status:empty { display: none; }
-.steps { padding-left: 22px; }
-.steps li { margin-bottom: 13px; }
-.side-highlight {
-  background: var(--navy);
-  color: white;
-  border-radius: 10px;
-  padding: 20px;
-  margin-top: 24px;
-}
-.side-highlight h3 { color: white; margin-bottom: 5px; }
-.side-highlight p { color: #dce7f4; margin-bottom: 0; }
+        nav a:hover {
+            color: #a9c9f5;
+        }
 
-.support-section { background: var(--light); }
-.support-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 25px;
-}
-.faq details { border-bottom: 1px solid var(--border); padding: 17px 0; }
-.faq summary { color: var(--navy); font-weight: 700; cursor: pointer; }
-.faq details p { color: var(--muted); margin-bottom: 0; }
-footer { background: #0b1e39; color: white; padding: 38px 0; text-align: center; }
-footer p { color: #c9d5e4; margin: 5px 0; }
-footer .logo { font-size: 1.5rem; }
+        .hero {
+            background: #10284c;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+        }
 
-.whatsapp-float {
-  position: fixed;
-  right: 20px;
-  bottom: 20px;
-  z-index: 30;
-  background: #128c52;
-  color: white;
-  text-decoration: none;
-  padding: 13px 18px;
-  border-radius: 50px;
-  box-shadow: 0 5px 18px #0002;
-  font-weight: 700;
-}
-.whatsapp-float:hover { background: #0c7542; }
+        .hero h1 {
+            font-size: clamp(32px, 5vw, 48px);
+            line-height: 1.2;
+            margin-bottom: 22px;
+        }
 
-@media (max-width: 1000px) {
-  .products-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .hero-content { gap: 28px; }
-}
-@media (max-width: 760px) {
-  .navbar { padding: 14px 0; flex-direction: column; align-items: flex-start; }
-  nav { gap: 13px 18px; }
-  .hero { padding: 53px 0; }
-  .hero-content, .about-layout, .two-columns, .support-grid { grid-template-columns: 1fr; }
-  .hero-image { min-height: 240px; }
-  section { padding: 52px 0; }
-  .features { grid-template-columns: 1fr; }
-  .panel { padding: 21px; }
-}
-@media (max-width: 450px) {
-  .products-grid, .form-grid { grid-template-columns: 1fr; }
-  .field.full { grid-column: auto; }
-  .product-image { height: 260px; }
-  .card-body { padding: 18px; }
-  h1 { letter-spacing: -1px; }
-  .whatsapp-float { right: 12px; bottom: 12px; padding: 11px 14px; }
-}
-</style>
+        .hero p {
+            max-width: 650px;
+            margin: 0 auto 30px;
+            color: #d7e1ef;
+            font-size: 17px;
+        }
+
+        .botao {
+            display: inline-block;
+            padding: 13px 25px;
+            background: #10284c;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            text-align: center;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .botao:hover {
+            background: #234b7d;
+            transform: translateY(-2px);
+        }
+
+        .botao-claro {
+            background: white;
+            color: #10284c;
+        }
+
+        .botao-claro:hover {
+            background: #e5edf8;
+        }
+
+        section {
+            padding: 75px 8%;
+            scroll-margin-top: 20px;
+        }
+
+        .titulo {
+            text-align: center;
+            color: #10284c;
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+
+        .subtitulo {
+            text-align: center;
+            color: #68778c;
+            margin-bottom: 40px;
+        }
+
+        .produtos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 24px;
+        }
+
+        .produto {
+            background: white;
+            border: 1px solid #e0e6ef;
+            border-radius: 9px;
+            padding: 28px 24px;
+            box-shadow: 0 5px 18px rgba(16, 40, 76, 0.06);
+            transition: 0.3s;
+        }
+
+        .produto:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(16, 40, 76, 0.12);
+        }
+
+        .produto h3 {
+            color: #10284c;
+            font-size: 23px;
+            margin-bottom: 12px;
+        }
+
+        .produto p {
+            color: #68778c;
+            margin-bottom: 20px;
+            min-height: 75px;
+        }
+
+        .preco {
+            color: #10284c;
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .produto .botao {
+            width: 100%;
+        }
+
+        .marca {
+            background: white;
+            text-align: center;
+        }
+
+        .marca p {
+            max-width: 760px;
+            margin: 20px auto 0;
+            color: #68778c;
+            font-size: 17px;
+        }
+
+        .beneficios {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 22px;
+            margin-top: 35px;
+        }
+
+        .beneficio {
+            border: 1px solid #e0e6ef;
+            padding: 22px;
+            border-radius: 8px;
+            background: #f8fafd;
+        }
+
+        .beneficio h3 {
+            color: #10284c;
+            margin-bottom: 8px;
+        }
+
+        .beneficio p {
+            color: #68778c;
+            font-size: 14px;
+        }
+
+        .compra {
+            background: #eaf0f8;
+        }
+
+        form {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 35px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(16, 40, 76, 0.07);
+        }
+
+        .campos {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        .campo {
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
+        }
+
+        .campo.completo {
+            grid-column: 1 / -1;
+        }
+
+        label {
+            color: #10284c;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccd5e2;
+            border-radius: 5px;
+            background: white;
+            color: #17263c;
+            font-size: 15px;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: 2px solid #9ab9e5;
+            border-color: #10284c;
+        }
+
+        textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .aviso {
+            font-size: 13px;
+            color: #68778c;
+            margin: 18px 0;
+        }
+
+        .form-botao {
+            width: 100%;
+            margin-top: 8px;
+            font-size: 16px;
+        }
+
+        .suporte {
+            text-align: center;
+            background: white;
+        }
+
+        .suporte p {
+            color: #68778c;
+            max-width: 600px;
+            margin: 15px auto 25px;
+        }
+
+        footer {
+            background: #10284c;
+            color: #d7e1ef;
+            text-align: center;
+            padding: 28px 15px;
+            font-size: 14px;
+        }
+
+        footer p + p {
+            margin-top: 5px;
+        }
+
+        @media (max-width: 650px) {
+            header {
+                justify-content: center;
+                text-align: center;
+            }
+
+            nav {
+                justify-content: center;
+                gap: 14px;
+            }
+
+            .hero {
+                padding: 75px 20px;
+            }
+
+            section {
+                padding: 55px 6%;
+            }
+
+            .campos {
+                grid-template-columns: 1fr;
+            }
+
+            .campo.completo {
+                grid-column: auto;
+            }
+
+            form {
+                padding: 23px 18px;
+            }
+        }
+    </style>
 </head>
 
 <body>
-<header>
-  <div class="container navbar">
-    <a class="logo" href="#inicio">Palmilhados<span>.</span></a>
-    <nav aria-label="Navegação principal">
-      <a href="#inicio">Início</a>
-      <a href="#produtos">Produtos</a>
-      <a href="#sobre">Nossa marca</a>
-      <a href="#pedido">Comprar</a>
-      <a href="#suporte">Suporte</a>
-    </nav>
-  </div>
-</header>
 
-<main>
-  <section class="hero" id="inicio">
-    <div class="container hero-content">
-      <div>
-        <span class="eyebrow">Palmilhados • Conforto em cada passo</span>
-        <h1>Seu conforto começa de baixo para cima.</h1>
-        <p>
-          Conheça nossa linha de palmilhas e encontre uma opção
-          que combine com sua rotina, seus calçados e seu estilo de vida.
-        </p>
-        <a class="button" href="#produtos">Conhecer produtos</a>
-      </div>
+    <header>
+        <div class="logo">PALMILHADOS</div>
 
-      <div class="hero-image">
-        <img src="comfort.jpg"
-             alt="Palmilhados Comfort"
-             onerror="this.style.display='none';this.nextElementSibling.hidden=false">
-        <div class="hero-placeholder" hidden>
-          <strong>Palmilhados</strong>
-          Conforto em cada passo.
-          <p>Adicione a foto comfort.jpg ao repositório para exibi-la aqui.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+        <nav>
+            <a href="#inicio">Início</a>
+            <a href="#produtos">Produtos</a>
+            <a href="#marca">Nossa marca</a>
+            <a href="#comprar">Comprar</a>
+            <a href="#suporte">Suporte</a>
+        </nav>
+    </header>
 
-  <section id="produtos">
-    <div class="container">
-      <div class="section-heading">
-        <span class="eyebrow" style="color:#07865b">Nossa coleção</span>
-        <h2>Encontre sua palmilha</h2>
-        <p>Conheça os modelos e escolha sua opção favorita.</p>
-      </div>
+    <main>
+        <section class="hero" id="inicio">
+            <h1>Conforto em cada passo.</h1>
 
-      <div class="products-grid">
-        <article class="card">
-          <div class="product-image">
-            <img src="comfort.jpg" alt="Palmilhados Comfort"
-                 loading="lazy"
-                 onerror="this.alt='Adicione o arquivo comfort.jpg ao GitHub'">
-          </div>
-          <div class="card-body">
-            <span class="product-category">USO DIÁRIO</span>
-            <h3>Palmilhados Comfort</h3>
-            <p>Uma opção para acompanhar a rotina com foco em conforto no uso diário.</p>
-            <div class="price">R$ 50,00 <small>/ par</small></div>
-            <button class="button secondary" type="button" onclick="selecionarProduto('comfort')">Escolher produto</button>
-          </div>
-        </article>
+            <p>
+                Conheça a linha de palmilhas Palmilhados,
+                desenvolvida para acompanhar sua rotina,
+                seus treinos e suas necessidades.
+            </p>
 
-        <article class="card">
-          <div class="product-image">
-            <img src="sport.jpg" alt="Palmilhados Sport"
-                 loading="lazy"
-                 onerror="this.alt='Adicione o arquivo sport.jpg ao GitHub'">
-          </div>
-          <div class="card-body">
-            <span class="product-category">LINHA ESPORTIVA</span>
-            <h3>Palmilhados Sport</h3>
-            <p>Uma alternativa para quem pratica atividades físicas e busca conforto durante os treinos.</p>
-            <div class="price">R$ 60,00 <small>/ par</small></div>
-            <button class="button secondary" type="button" onclick="selecionarProduto('sport')">Escolher produto</button>
-          </div>
-        </article>
+            <a class="botao botao-claro" href="#produtos">
+                Conhecer coleção
+            </a>
+        </section>
 
-        <article class="card">
-          <div class="product-image">
-            <img src="support.jpg" alt="Palmilhados Support"
-                 loading="lazy"
-                 onerror="this.alt='Adicione o arquivo support.jpg ao GitHub'">
-          </div>
-          <div class="card-body">
-            <span class="product-category">SUPORTE</span>
-            <h3>Palmilhados Support</h3>
-            <p>Uma opção voltada a quem procura suporte para os pés, de acordo com as características do modelo.</p>
-            <div class="price">R$ 80,00 <small>/ par</small></div>
-            <button class="button secondary" type="button" onclick="selecionarProduto('support')">Escolher produto</button>
-          </div>
-        </article>
+        <section id="produtos">
+            <h2 class="titulo">Nossos produtos</h2>
 
-        <article class="card">
-          <div class="product-image">
-            <img src="combo.jpg" alt="Combo Palmilhados"
-                 loading="lazy"
-                 onerror="this.alt='Adicione o arquivo combo.jpg ao GitHub'">
-          </div>
-          <div class="card-body">
-            <span class="product-category">OFERTA ESPECIAL</span>
-            <h3>Combo Palmilhados</h3>
-            <p>Uma oferta especial para quem deseja aproveitar uma combinação de produtos da marca.</p>
-            <div class="price">R$ 70,00 <small>/ combo</small></div>
-            <button class="button secondary" type="button" onclick="selecionarProduto('combo')">Escolher combo</button>
-          </div>
-        </article>
-      </div>
-      <p class="note" style="text-align:center;margin-top:24px">
-        Consulte nossa equipe para confirmar as características, a composição do combo e a disponibilidade.
-      </p>
-    </div>
-  </section>
+            <p class="subtitulo">
+                Encontre a opção ideal para acompanhar você.
+            </p>
 
-  <section class="about-section" id="sobre">
-    <div class="container about-layout">
-      <div class="about-photo">
-        <img src="sport.jpg" alt="Detalhe de produto Palmilhados"
-             loading="lazy"
-             onerror="this.style.display='none'">
-      </div>
-      <div class="about-copy">
-        <span class="eyebrow" style="color:#07865b">Nossa marca</span>
-        <h2>Mais atenção aos detalhes de cada passo.</h2>
-        <p>
-          A Palmilhados nasceu com a proposta de reunir praticidade,
-          estilo e opções para diferentes rotinas. Queremos que você
-          encontre informações claras e tenha uma experiência de compra simples.
-        </p>
-        <p>
-          Estamos construindo uma marca que valoriza o atendimento,
-          a melhoria contínua e a confiança de cada cliente.
-        </p>
-        <a href="#produtos" class="button secondary">Explorar coleção</a>
-      </div>
-    </div>
+            <div class="produtos">
 
-    <div class="container features">
-      <div class="feature">
-        <strong>Para diferentes rotinas</strong>
-        <p>Conheça opções para o dia a dia e para atividades esportivas.</p>
-      </div>
-      <div class="feature">
-        <strong>Compra simples</strong>
-        <p>Escolha o modelo e envie os dados do seu pedido pelo site.</p>
-      </div>
-      <div class="feature">
-        <strong>Atendimento próximo</strong>
-        <p>Entre em contato para esclarecer dúvidas sobre produtos e entrega.</p>
-      </div>
-    </div>
-  </section>
+                <article class="produto">
+                    <h3>Comfort</h3>
 
-  <section class="purchase-section" id="pedido">
-    <div class="container">
-      <div class="section-heading">
-        <span class="eyebrow" style="color:#07865b">Pedido online</span>
-        <h2>Faça seu pedido</h2>
-        <p>Preencha os dados para nossa equipe entrar em contato.</p>
-      </div>
+                    <p>
+                        Uma opção para quem busca conforto
+                        durante as atividades do dia a dia.
+                    </p>
 
-      <div class="two-columns">
-        <form class="panel" id="pedidoForm">
-          <h2>Seus dados</h2>
-          <div class="form-grid">
-            <div class="field full">
-              <label for="nome">Nome completo *</label>
-              <input id="nome" name="nome" autocomplete="name" required>
+                    <div class="preco">R$ 50,00</div>
+
+                    <button class="botao"
+                        type="button"
+                        onclick="selecionarProduto('Comfort')">
+                        Escolher produto
+                    </button>
+                </article>
+
+                <article class="produto">
+                    <h3>Sport</h3>
+
+                    <p>
+                        Uma linha voltada para quem pratica
+                        esportes e busca conforto durante os treinos.
+                    </p>
+
+                    <div class="preco">R$ 60,00</div>
+
+                    <button class="botao"
+                        type="button"
+                        onclick="selecionarProduto('Sport')">
+                        Escolher produto
+                    </button>
+                </article>
+
+                <article class="produto">
+                    <h3>Support</h3>
+
+                    <p>
+                        Uma opção pensada para quem procura
+                        suporte adicional ao utilizar seus calçados.
+                    </p>
+
+                    <div class="preco">R$ 80,00</div>
+
+                    <button class="botao"
+                        type="button"
+                        onclick="selecionarProduto('Support')">
+                        Escolher produto
+                    </button>
+                </article>
+
+                <article class="produto">
+                    <h3>Combo</h3>
+
+                    <p>
+                        Uma opção econômica para quem deseja
+                        adquirir o conjunto oferecido pela marca.
+                    </p>
+
+                    <div class="preco">R$ 70,00</div>
+
+                    <button class="botao"
+                        type="button"
+                        onclick="selecionarProduto('Combo')">
+                        Escolher produto
+                    </button>
+                </article>
+
             </div>
-            <div class="field">
-              <label for="email">E-mail *</label>
-              <input id="email" name="email" type="email" autocomplete="email" required>
+        </section>
+
+        <section class="marca" id="marca">
+            <h2 class="titulo">Nossa marca</h2>
+
+            <p>
+                A Palmilhados nasceu com a proposta de oferecer
+                opções de palmilhas para diferentes momentos da rotina.
+                Buscamos unir praticidade, conforto e funcionalidade
+                em uma experiência de compra simples.
+            </p>
+
+            <div class="beneficios">
+                <article class="beneficio">
+                    <h3>Para sua rotina</h3>
+                    <p>
+                        Opções pensadas para acompanhar diferentes
+                        atividades do dia a dia.
+                    </p>
+                </article>
+
+                <article class="beneficio">
+                    <h3>Para seus treinos</h3>
+                    <p>
+                        Uma linha esportiva voltada para quem
+                        pratica atividades físicas.
+                    </p>
+                </article>
+
+                <article class="beneficio">
+                    <h3>Compra simplificada</h3>
+                    <p>
+                        Escolha seu produto e envie os dados
+                        do pedido diretamente pelo formulário.
+                    </p>
+                </article>
             </div>
-            <div class="field">
-              <label for="telefone">Celular *</label>
-              <input id="telefone" name="telefone" type="tel" autocomplete="tel" required>
-            </div>
-            <div class="field">
-              <label for="produto">Produto *</label>
-              <select id="produto" name="produto" required>
-                <option value="comfort">Palmilhados Comfort — R$ 50,00</option>
-                <option value="sport">Palmilhados Sport — R$ 60,00</option>
-                <option value="support">Palmilhados Support — R$ 80,00</option>
-                <option value="combo">Combo Palmilhados — R$ 70,00</option>
-              </select>
-            </div>
-            <div class="field">
-              <label for="quantidade">Quantidade de pares/combos *</label>
-              <input id="quantidade" name="quantidade" type="number" min="1" max="20" value="1" required>
-            </div>
-            <div class="field">
-              <label for="tamanho">Tamanho do calçado *</label>
-              <input id="tamanho" name="tamanho" type="number" min="15" max="55" required>
-            </div>
-            <div class="field">
-              <label for="cep">CEP *</label>
-              <input id="cep" name="cep" autocomplete="postal-code" inputmode="numeric" placeholder="00000-000" required>
-            </div>
-            <div class="field full">
-              <label for="endereco">Rua, número e complemento *</label>
-              <input id="endereco" name="endereco" autocomplete="street-address" required>
-            </div>
-            <div class="field">
-              <label for="cidade">Cidade *</label>
-              <input id="cidade" name="cidade" autocomplete="address-level2" required>
-            </div>
-            <div class="field">
-              <label for="estado">Estado (UF) *</label>
-              <input id="estado" name="estado" maxlength="2" autocomplete="address-level1" placeholder="SP" required>
-            </div>
-            <div class="field full">
-              <label for="observacoes">Observações (opcional)</label>
-              <textarea id="observacoes" name="observacoes" rows="3" placeholder="Alguma informação sobre o pedido?"></textarea>
-            </div>
-          </div>
+        </section>
 
-          <div class="total-box">
-            <div>Total dos produtos</div>
-            <strong id="total">R$ 50,00</strong>
-            <p class="note">Frete não incluído. O valor final e as opções de pagamento serão combinados com a loja.</p>
-          </div>
+        <section class="compra" id="comprar">
+            <h2 class="titulo">Faça seu pedido</h2>
 
-          <input type="hidden" name="valor_produtos" id="valorProdutos">
-          <input type="hidden" name="_subject" value="Novo pedido - Palmilhados">
+            <p class="subtitulo">
+                Preencha seus dados para enviar sua solicitação.
+            </p>
 
-          <div class="check-row">
-            <input type="checkbox" id="consentimento" required>
-            <label for="consentimento">Confirmo que os dados estão corretos e autorizo seu uso para processar o pedido e entrar em contato comigo.</label>
-          </div>
+            <form
+                action="https://formspree.io/f/xqpebdjb"
+                method="POST">
 
-          <button class="button" style="width:100%" type="submit" id="finalizarPedido">Enviar pedido</button>
-          <p class="note">O pedido será enviado à loja. O pagamento ainda não é realizado nesta página.</p>
-          <div class="status" id="mensagemPedido" role="status" aria-live="polite"></div>
-        </form>
+                <div class="campos">
 
-        <aside class="panel">
-          <h2>Como funciona</h2>
-          <ol class="steps">
-            <li>Escolha o produto e a quantidade.</li>
-            <li>Preencha seus dados de contato e entrega.</li>
-            <li>Envie o pedido pelo formulário.</li>
-            <li>Aguarde o contato da equipe para combinar frete, pagamento e entrega.</li>
-          </ol>
-          <div class="side-highlight">
-            <h3>Precisa de ajuda?</h3>
-            <p>Fale com a Palmilhados pelo WhatsApp para esclarecer suas dúvidas antes de comprar.</p>
-            <br>
-            <a href="#suporte" class="button">Falar com a equipe</a>
-          </div>
-        </aside>
-      </div>
-    </div>
-  </section>
+                    <div class="campo">
+                        <label for="nome">Nome completo</label>
+                        <input
+                            type="text"
+                            id="nome"
+                            name="Nome"
+                            placeholder="Digite seu nome"
+                            required>
+                    </div>
 
-  <section class="support-section" id="suporte">
-    <div class="container">
-      <div class="section-heading">
-        <span class="eyebrow" style="color:#07865b">Atendimento</span>
-        <h2>Conte com a Palmilhados</h2>
-        <p>Estamos aqui para ajudar com dúvidas sobre produtos e pedidos.</p>
-      </div>
+                    <div class="campo">
+                        <label for="email">E-mail</label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="Email"
+                            placeholder="seuemail@exemplo.com"
+                            required>
+                    </div>
 
-      <div class="support-grid">
-        <div class="panel faq">
-          <h3>Perguntas frequentes</h3>
-          <details>
-            <summary>Como faço um pedido?</summary>
-            <p>Escolha um produto, preencha o formulário e envie seus dados. Nossa equipe entrará em contato.</p>
-          </details>
-          <details>
-            <summary>Como funciona o pagamento?</summary>
-            <p>As formas de pagamento serão combinadas diretamente com a loja após o envio do pedido.</p>
-          </details>
-          <details>
-            <summary>O frete está incluído?</summary>
-            <p>Não. O frete será calculado ou combinado com a equipe antes de finalizar a compra.</p>
-          </details>
-          <details>
-            <summary>Posso tirar dúvidas antes de comprar?</summary>
-            <p>Sim. Use o formulário ao lado para preparar uma mensagem pelo WhatsApp.</p>
-          </details>
-        </div>
+                    <div class="campo">
+                        <label for="celular">Celular / WhatsApp</label>
+                        <input
+                            type="tel"
+                            id="celular"
+                            name="Celular"
+                            placeholder="(11) 99999-9999"
+                            required>
+                    </div>
 
-        <div class="panel">
-          <h3>Fale com a gente</h3>
-          <p>Escreva sua dúvida e continue a conversa pelo WhatsApp.</p>
-          <label for="duvida">Sua mensagem</label>
-          <textarea id="duvida" rows="4" placeholder="Olá! Gostaria de saber mais sobre..."></textarea>
-          <br><br>
-          <button class="button" type="button" id="abrirWhatsApp">Conversar pelo WhatsApp</button>
-          <p class="note">O WhatsApp será aberto com a mensagem preparada. Você precisará enviá-la por lá.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-</main>
+                    <div class="campo">
+                        <label for="produto">Produto</label>
+                        <select id="produto" name="Produto" required>
+                            <option value="">Selecione um produto</option>
+                            <option value="Comfort - R$ 50,00">
+                                Comfort - R$ 50,00
+                            </option>
+                            <option value="Sport - R$ 60,00">
+                                Sport - R$ 60,00
+                            </option>
+                            <option value="Support - R$ 80,00">
+                                Support - R$ 80,00
+                            </option>
+                            <option value="Combo - R$ 70,00">
+                                Combo - R$ 70,00
+                            </option>
+                        </select>
+                    </div>
 
-<footer>
-  <div class="container">
-    <a class="logo" href="#inicio">Palmilhados<span>.</span></a>
-    <p>Conforto em cada passo.</p>
-    <p>&copy; <span id="ano"></span> Palmilhados. Todos os direitos reservados.</p>
-  </div>
-</footer>
+                    <div class="campo">
+                        <label for="quantidade">Quantidade de pares</label>
+                        <input
+                            type="number"
+                            id="quantidade"
+                            name="Quantidade de pares"
+                            min="1"
+                            value="1"
+                            required>
+                    </div>
 
-<a class="whatsapp-float" id="whatsappFlutuante" href="#suporte">WhatsApp</a>
+                    <div class="campo">
+                        <label for="tamanho">Tamanho do calçado</label>
+                        <select id="tamanho" name="Tamanho do calçado" required>
+                            <option value="">Selecione o tamanho</option>
+                            <option>34</option>
+                            <option>35</option>
+                            <option>36</option>
+                            <option>37</option>
+                            <option>38</option>
+                            <option>39</option>
+                            <option>40</option>
+                            <option>41</option>
+                            <option>42</option>
+                            <option>43</option>
+                            <option>44</option>
+                            <option>45</option>
+                        </select>
+                    </div>
 
-<script>
-const WHATSAPP_NUMBER = "5511991106862";
-const FORMSPREE_ENDPOINT = "https://formspree.io/f/xqpebdjb";
+                    <div class="campo">
+                        <label for="cep">CEP</label>
+                        <input
+                            type="text"
+                            id="cep"
+                            name="CEP"
+                            placeholder="00000-000"
+                            required>
+                    </div>
 
-const PRODUCTS = {
-  comfort: { name: "Palmilhados Comfort", price: 50 },
-  sport: { name: "Palmilhados Sport", price: 60 },
-  support: { name: "Palmilhados Support", price: 80 },
-  combo: { name: "Combo Palmilhados", price: 70 }
-};
+                    <div class="campo">
+                        <label for="cidade">Cidade e estado</label>
+                        <input
+                            type="text"
+                            id="cidade"
+                            name="Cidade e estado"
+                            placeholder="Ex.: São Paulo - SP"
+                            required>
+                    </div>
 
-const productSelect = document.getElementById("produto");
-const quantityInput = document.getElementById("quantidade");
-const totalDisplay = document.getElementById("total");
-const valueHidden = document.getElementById("valorProdutos");
-const pedidoForm = document.getElementById("pedidoForm");
-const mensagemPedido = document.getElementById("mensagemPedido");
-const finalizarPedido = document.getElementById("finalizarPedido");
+                    <div class="campo completo">
+                        <label for="endereco">Endereço completo</label>
+                        <input
+                            type="text"
+                            id="endereco"
+                            name="Endereço"
+                            placeholder="Rua, número, bairro e complemento"
+                            required>
+                    </div>
 
-function money(value) {
-  return value.toLocaleString("pt-BR", {
-    style: "currency",
-    currency: "BRL"
-  });
-}
+                    <div class="campo completo">
+                        <label for="observacoes">Observações</label>
+                        <textarea
+                            id="observacoes"
+                            name="Observações"
+                            placeholder="Informações adicionais sobre o pedido"></textarea>
+                    </div>
 
-function getOrder() {
-  const product = PRODUCTS[productSelect.value];
-  const quantity = Number(quantityInput.value);
+                </div>
 
-  if (!product || !Number.isInteger(quantity) || quantity < 1 || quantity > 20) {
-    throw new Error("Escolha uma quantidade entre 1 e 20.");
-  }
+                <p class="aviso">
+                    O envio deste formulário registra uma solicitação
+                    de pedido. A confirmação do pedido, do valor final,
+                    do pagamento e da entrega será feita posteriormente
+                    pela equipe da Palmilhados.
+                </p>
 
-  return { product, quantity, total: product.price * quantity };
-}
+                <button class="botao form-botao" type="submit">
+                    Enviar pedido
+                </button>
 
-function updateTotal() {
-  try {
-    const order = getOrder();
-    totalDisplay.textContent = money(order.total);
-    valueHidden.value = money(order.total);
-  } catch (error) {
-    totalDisplay.textContent = "Confira a quantidade";
-    valueHidden.value = "";
-  }
-}
+            </form>
+        </section>
 
-function selecionarProduto(productId) {
-  if (!PRODUCTS[productId]) return;
-  productSelect.value = productId;
-  updateTotal();
-  document.getElementById("pedido").scrollIntoView({ behavior: "smooth" });
-}
+        <section class="suporte" id="suporte">
+            <h2 class="titulo">Precisa de ajuda?</h2>
 
-productSelect.addEventListener("change", updateTotal);
-quantityInput.addEventListener("input", updateTotal);
+            <p>
+                Entre em contato com nossa equipe para tirar dúvidas
+                sobre os produtos e o processo de compra.
+            </p>
 
-pedidoForm.addEventListener("submit", async function(event) {
-  event.preventDefault();
+            <a
+                class="botao"
+                href="https://wa.me/5511991106862"
+                target="_blank"
+                rel="noopener noreferrer">
+                Falar com atendimento
+            </a>
+        </section>
+    </main>
 
-  if (!pedidoForm.reportValidity()) return;
+    <footer>
+        <p><strong>PALMILHADOS</strong></p>
+        <p>Conforto em cada passo.</p>
+        <p>&copy; 2026 Palmilhados. Todos os direitos reservados.</p>
+    </footer>
 
-  let order;
-  try {
-    order = getOrder();
-  } catch (error) {
-    mensagemPedido.textContent = error.message;
-    return;
-  }
+    <script>
+        function selecionarProduto(produto) {
+            const campoProduto = document.getElementById("produto");
 
-  const formData = new FormData(pedidoForm);
-  formData.set("produto", order.product.name);
-  formData.set("quantidade", String(order.quantity));
-  formData.set("valor_produtos", money(order.total));
-  formData.set("status_pagamento", "Pendente de contato com a loja");
-  formData.set("_subject", "Novo pedido - Palmilhados");
+            const opcoes = {
+                "Comfort": "Comfort - R$ 50,00",
+                "Sport": "Sport - R$ 60,00",
+                "Support": "Support - R$ 80,00",
+                "Combo": "Combo - R$ 70,00"
+            };
 
-  finalizarPedido.disabled = true;
-  finalizarPedido.textContent = "Enviando pedido...";
-  mensagemPedido.textContent = "";
+            campoProduto.value = opcoes[produto];
 
-  try {
-    const response = await fetch(FORMSPREE_ENDPOINT, {
-      method: "POST",
-      body: formData,
-      headers: { "Accept": "application/json" }
-    });
+            document.getElementById("comprar").scrollIntoView({
+                behavior: "smooth"
+            });
+        }
+    </script>
 
-    if (!response.ok) {
-      throw new Error("O serviço de pedidos não aceitou o envio.");
-    }
-
-    mensagemPedido.textContent =
-      "Pedido enviado com sucesso! Nossa equipe entrará em contato para combinar o pagamento e a entrega.";
-
-    pedidoForm.reset();
-    updateTotal();
-    finalizarPedido.textContent = "Pedido enviado!";
-  } catch (error) {
-    mensagemPedido.textContent =
-      "Não conseguimos enviar seu pedido. Confira sua conexão e tente novamente.";
-    finalizarPedido.disabled = false;
-    finalizarPedido.textContent = "Tentar enviar pedido novamente";
-  }
-});
-
-function openWhatsApp(message) {
-  if (!/^\d{12,15}$/.test(WHATSAPP_NUMBER)) {
-    alert("Confira o número de WhatsApp da Palmilhados na configuração do código.");
-    return;
-  }
-
-  const url = "https://wa.me/" + WHATSAPP_NUMBER +
-    "?text=" + encodeURIComponent(message);
-
-  window.open(url, "_blank", "noopener,noreferrer");
-}
-
-document.getElementById("abrirWhatsApp").addEventListener("click", function() {
-  const doubt = document.getElementById("duvida").value.trim();
-  openWhatsApp(
-    doubt
-      ? "Olá! Tenho uma dúvida sobre a Palmilhados: " + doubt
-      : "Olá! Gostaria de atendimento da Palmilhados."
-  );
-});
-
-document.getElementById("whatsappFlutuante").addEventListener("click", function(event) {
-  event.preventDefault();
-  openWhatsApp("Olá! Gostaria de atendimento da Palmilhados.");
-});
-
-document.getElementById("ano").textContent = new Date().getFullYear();
-updateTotal();
-</script>
 </body>
 </html>
+```
